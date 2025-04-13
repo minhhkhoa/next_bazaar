@@ -1,0 +1,23 @@
+@import "../../app/variables.scss"; // nếu bạn có biến SCSS riêng
+
+.searchProduct {
+  // override button nằm trong Input.Search
+  .ant-input-search-button {
+    background-color: $primary-color !important;
+    transition: background-color 0.3s ease;
+
+    .anticon {
+      color: #ffffff;
+      transition: color 0.3s ease;
+    }
+
+    &:hover {
+      background-color: #ffffff !important;
+      border: $primary-color 3px solid !important;
+      border-radius: 4px !important;
+      .anticon {
+        color: $primary-color;
+      }
+    }
+  }
+}
