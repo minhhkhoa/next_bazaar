@@ -10,10 +10,12 @@ export default function Header() {
       <div className="flex justify-evenly items-center gap-3 bg-[#1c5b41] h-22">
         <Link href="/">
           <Image
-            alt=""
+            alt="Logo"
             src="https://bizweb.dktcdn.net/100/455/315/themes/894917/assets/logo.png?1724746453440"
             width={153}
             height={40}
+            priority
+            className="w-[153px] h-[40px]"
           />
         </Link>
 

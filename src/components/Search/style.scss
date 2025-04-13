@@ -1,4 +1,4 @@
-@import "../../app/variables.scss"; // nếu bạn có biến SCSS riêng
+@use "../../app/variables.scss" as *;
 
 .searchProduct {
   // override button nằm trong Input.Search
