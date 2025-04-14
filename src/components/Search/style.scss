@@ -1,6 +1,7 @@
 @use "../../app/variables.scss" as *;
 
 .searchProduct {
+  border-radius: 16px !important;
   // override button nằm trong Input.Search
   .ant-input-search-button {
     background-color: $primary-color !important;

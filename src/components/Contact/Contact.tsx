@@ -1,48 +1,32 @@
-import React from "react";
-import { CircularGallery } from "./CircularGallery";
+'use client';
+
+import React from 'react'
+import { Input } from "antd";
+import type { GetProps } from "antd";
+type SearchProps = GetProps<typeof Input.Search>;
+const { Search } = Input;
 
 export default function Contact() {
+
+    const onSearch: SearchProps["onSearch"] = (value, _e, info) =>
+      console.log(info?.source, value);
   return (
-    <div className="bg-[#3C3C3C] overflow-hidden h-[260px]">
-      <div className="translate-y-[10px]">
-        <span className="text-3xl font-bold text-[#fe9614] tracking-wide uppercase ml-4">
-          <i>Partners</i>
-        </span>
-      </div>
-      <div style={{ height: "290px", position: "relative", transform: "translateY(-30px)" }}>
-        <CircularGallery
-          items={[
-            {
-              text: "",
-              image: "/contact/chanel.png",
-              // text: "Chanel",
-            },
-            {
-              // text: "Gucci",
-              text: "",
-              image: "/contact/gucci.png",
-            },
-            {
-              // text: "Dior",
-              text: "",
-              image: "/contact/dior.png",
-            },
-            {
-              // text: "Prada",
-              text: "",
-              image: "/contact/prada.png",
-            },
-            {
-              // text: "Louis Vuitton",
-              text: "",
-              image: "/contact/louis-vuitton.png",
-            },
-          ]}
-          bend={0}
-          textColor="white"
-          borderRadius={0.05}
-        />
-      </div>
+    <div className="flex flex-col md:flex-row items-center justify-evenly gap-5 bg-[#fe9614] p-4 md:h-20">
+      <span className="md:text-xl font-bold text-[#fff] text-center">
+        NHẬP THÔNG TIN KHUYẾN MÃI TỪ CHÚNG TÔI
+      </span>
+
+      <Search
+        placeholder="Nhập email của bạn"
+        onSearch={onSearch}
+        size="large"
+        enterButton={
+          <button className="bg-[#333] text-white h-10 w-14 rounded-lg translate-x-[-10px]">
+            Gửi
+          </button>
+        }
+        style={{ width: 360 }}
+      />
     </div>
   );
 }

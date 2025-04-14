@@ -13,9 +13,9 @@ export default function SearchProduct() {
     console.log(info?.source, value);
 
   return (
-    <div className="!w-1/3 searchProduct">
+    <div className="w-full searchProduct">
       <Search
-        placeholder="input search text"
+        placeholder="Tìm kiếm sản phẩm mong muốn"
         onSearch={onSearch}
         size="large"
         className="searchProduct"
