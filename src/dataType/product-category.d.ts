@@ -25,3 +25,5 @@ export const CategorySchema = z.object({
   __v: z.number(),
   thumbnail: z.string(),
 });
+
+export type Category = z.infer<typeof CategorySchema>;

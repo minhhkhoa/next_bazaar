@@ -7,6 +7,7 @@ import type { MenuProps } from "antd";
 import { ShoppingCartOutlined, UserOutlined } from "@ant-design/icons";
 import { Badge, Tooltip, Dropdown } from "antd";
 import useWindowSize from "@/hook/WindowSize/useWindowSize";
+import HeaderMenu from "./HeaderMenu";
 
 const items: MenuProps["items"] = [
   {
@@ -85,6 +86,10 @@ export default function Header() {
           <SearchProduct />
         </div>
       )}
+
+      <div>
+        <HeaderMenu/>
+      </div>
     </>
   );
 }
