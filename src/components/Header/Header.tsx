@@ -4,7 +4,11 @@ import Image from "next/image";
 import Link from "next/link";
 import SearchProduct from "../Search/SearchProduct";
 import type { MenuProps } from "antd";
-import { ShoppingCartOutlined, UserOutlined } from "@ant-design/icons";
+import {
+  PhoneOutlined,
+  ShoppingCartOutlined,
+  UserOutlined,
+} from "@ant-design/icons";
 import { Badge, Tooltip, Dropdown } from "antd";
 import useWindowSize from "@/hook/WindowSize/useWindowSize";
 import HeaderMenu from "./HeaderMenu";
@@ -13,11 +17,7 @@ const items: MenuProps["items"] = [
   {
     key: "1",
     label: (
-      <Link
-        target="_blank"
-        rel="noopener noreferrer"
-        href="/login"
-      >
+      <Link target="_blank" rel="noopener noreferrer" href="/login">
         Đăng nhập
       </Link>
     ),
@@ -25,15 +25,11 @@ const items: MenuProps["items"] = [
   {
     key: "2",
     label: (
-      <Link
-        target="_blank"
-        rel="noopener noreferrer"
-        href="/register"
-      >
+      <Link target="_blank" rel="noopener noreferrer" href="/register">
         Đăng ký
       </Link>
     ),
-  }
+  },
 ];
 
 export default function Header() {
@@ -87,8 +83,15 @@ export default function Header() {
         </div>
       )}
 
-      <div>
-        <HeaderMenu/>
+      <div className="flex justify-center items-center border-b-1 border-[#4d5250]">
+        <div className="flex-2 ml-8">
+          <HeaderMenu />
+        </div>
+        <div className="flex flex-1 gap-3 text-[#1c5b41]">
+          |
+          <PhoneOutlined />
+          <b>Hotline: 1900 9999</b>
+        </div>
       </div>
     </>
   );

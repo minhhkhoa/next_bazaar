@@ -15,7 +15,7 @@ export const categories = [
     updatedAt: {
       $date: "2025-01-26T06:51:15.213Z",
     },
-    slug: "thoi-trang-G0T2abiGs",
+    slug: "thoi-trang",
     __v: 0,
     thumbnail:
       "https://res.cloudinary.com/dj6jqey93/image/upload/v1737454550/dp8hln2o4gej622csipo.png",
@@ -78,7 +78,7 @@ export const categories = [
     updatedAt: {
       $date: "2025-01-21T10:36:20.478Z",
     },
-    slug: "quan-nam",
+    slug: "quan-ao-nam",
     __v: 0,
     thumbnail:
       "https://res.cloudinary.com/dj6jqey93/image/upload/v1737455779/yenh8unz3zcgqvpgl1ey.png",
@@ -207,27 +207,6 @@ export const categories = [
       $date: "2025-02-02T11:55:24.529Z",
     },
     slug: "laptop",
-    __v: 0,
-  },
-  {
-    _id: {
-      $oid: "679f5dba567d21f6df21832e",
-    },
-    title: "as",
-    parent_id: "66f60f88ab595b24f45f5749",
-    description: "",
-    thumbnail:
-      "https://res.cloudinary.com/dj6jqey93/image/upload/v1738497466/e48a6sesmly9y1b2dz2w.png",
-    status: "active",
-    position: 11,
-    deleted: true,
-    createdAt: {
-      $date: "2025-02-02T11:57:46.121Z",
-    },
-    updatedAt: {
-      $date: "2025-02-02T11:58:01.228Z",
-    },
-    slug: "as",
     __v: 0,
   },
 ];

@@ -3,8 +3,9 @@
 import { Category } from "@/dataType/product-category";
 
 interface TreeNode {
-  value: string;
+  key: string | number;
   label: string;
+  slug: string;
   children: TreeNode[];
 }
 export const convertToTree = (categories: Category[]): TreeNode[] => {
@@ -14,9 +15,10 @@ export const convertToTree = (categories: Category[]): TreeNode[] => {
   categories.forEach((item) => {
     const id = item._id.$oid;
     map[id] = {
-      value: id,
+      key: id,
       label: item.title,
       children: [],
+      slug: item.slug,
     };
   });
 

@@ -1,0 +1,13 @@
+.headerMenu {
+  width: 100% !important;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 5px 0;
+
+  .ant-menu-title-content {
+    font-weight: bold;
+    font-size: 16px;
+    color: #1c5b41;
+  }
+}
