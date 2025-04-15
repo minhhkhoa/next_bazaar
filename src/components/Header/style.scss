@@ -10,4 +10,8 @@
     font-size: 16px;
     color: #1c5b41;
   }
+
+  .ant-menu-submenu-active::after {
+    border-bottom: 2px solid #1c5b41 !important;
+  }
 }
