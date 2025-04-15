@@ -2,11 +2,11 @@
 
 import { Category } from "@/dataType/product-category";
 
-interface TreeNode {
+export interface TreeNode {
   key: string | number;
   label: string;
   slug: string;
-  children: TreeNode[];
+  children?: TreeNode[];
 }
 export const convertToTree = (categories: Category[]): TreeNode[] => {
   const map: { [key: string]: TreeNode } = {};
@@ -26,7 +26,7 @@ export const convertToTree = (categories: Category[]): TreeNode[] => {
     const id = item._id.$oid;
     if (item.parent_id) {
       if (map[item.parent_id]) {
-        map[item.parent_id].children.push(map[id]);
+        map[item.parent_id].children?.push(map[id]);
       } else {
         tree.push(map[id]);
       }
