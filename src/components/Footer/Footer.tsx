@@ -1,13 +1,17 @@
+'use client'
+
 import Contact from "../Contact/Contact";
 import Partners from "../Contact/Partners";
 import BottomFooter from "./BottomFooter";
 
+import { usePathname } from "next/navigation";
+
 export default function Footer() {
+  const pathname = usePathname();
+  const isHome = pathname === "/" || pathname === "/home";
   return (
     <>
-      <div>
-        <Partners />
-      </div>
+      {isHome && <Partners />}
 
       <div>
         <Contact />

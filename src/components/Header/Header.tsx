@@ -96,7 +96,7 @@ export default function Header() {
               </Badge>
             </Tooltip>
 
-            {/* Nếu màn nhỏ sẽ xho nó nút menu để show ra (các danh mục) */}
+            {/* Nếu màn nhỏ sẽ cho nó nút menu để show ra (các danh mục) */}
             {(width ?? 0) <= 768 && (
               <>
                 <Space>
@@ -139,7 +139,7 @@ export default function Header() {
       {/* Màn lớn thì để danh mục ở dưới này */}
       {(width ?? 0) > 768 && (
         <div className="flex flex-wrap justify-around items-center border-b bg-[#001529]">
-          <div className="mr-4">
+          <div className="ml-[-35px]">
             <HeaderMenu />
           </div>
 

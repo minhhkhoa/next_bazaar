@@ -1,5 +1,3 @@
-// "use client";
-
 import { useRouter } from "next/navigation";
 import { categories } from "@/data/product-category/products-category";
 import { convertToTree } from "@/ultils/treeParent";
