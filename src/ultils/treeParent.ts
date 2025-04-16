@@ -3,7 +3,7 @@
 import { Category } from "@/dataType/product-category";
 
 export interface TreeNode {
-  key: string | number;
+  key: string;
   label: string;
   slug: string;
   children?: TreeNode[];

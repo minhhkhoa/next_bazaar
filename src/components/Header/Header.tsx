@@ -41,7 +41,6 @@ export default function Header() {
   const treeData = convertToTree(categories);
   treeData.forEach(removeEmptyChildren);
 
-  console.log(treeData);
 
   const [open, setOpen] = useState(false);
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -121,7 +120,7 @@ export default function Header() {
                     mode="inline"
                     defaultSelectedKeys={["1"]}
                     defaultOpenKeys={["sub1"]}
-                    style={{ height: "100%"}}
+                    style={{ height: "100%" }}
                     items={treeData}
                   />
                 </Drawer>
@@ -139,13 +138,13 @@ export default function Header() {
 
       {/* Màn lớn thì để danh mục ở dưới này */}
       {(width ?? 0) > 768 && (
-        <div className="flex flex-wrap justify-around items-center border-b">
+        <div className="flex flex-wrap justify-around items-center border-b bg-[#001529]">
           <div className="mr-4">
             <HeaderMenu />
           </div>
 
           <div
-            className={`gap-3 text-[#1c5b41] justify-center items-center translate-y-[-8px] mt-4 ${
+            className={`gap-3 text-[#ffffff] justify-center items-center translate-y-[-8px] mt-4 ${
               (width ?? 0) > 1110 ? "flex" : "hidden"
             }`}
           >
