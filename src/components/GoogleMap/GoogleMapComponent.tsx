@@ -8,13 +8,13 @@ import {
   OverlayView,
   InfoWindow,
 } from "@react-google-maps/api";
+import { usePathname } from "next/navigation";
 
 const containerStyle = {
   width: "100%",
   height: "480px",
 };
 
-// Tọa độ (lat, lng) của vị trí trung tâm bản đồ
 const center = {
   lat: 20.772205,
   lng: 105.763294,
@@ -25,14 +25,14 @@ interface GoogleMapComponentProps {
 }
 
 const GoogleMapComponent: React.FC<GoogleMapComponentProps> = ({ apiKey }) => {
+  const pathname = usePathname();
+
+  // State marker và InfoWindow như cũ
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [marker, setMarker] = React.useState({
     lat: 20.772205,
     lng: 105.763294,
   });
-
-  // 20.772205, 105.763294;
-  // 20.772084, 105.763326
 
   const [infoWindow, setInfoWindow] = React.useState({
     isOpen: false,
@@ -53,7 +53,12 @@ const GoogleMapComponent: React.FC<GoogleMapComponentProps> = ({ apiKey }) => {
 
   return (
     <LoadScript googleMapsApiKey={apiKey}>
-      <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={13}>
+      <GoogleMap
+        key={pathname}
+        mapContainerStyle={containerStyle}
+        center={center}
+        zoom={13}
+      >
         {/* Marker */}
         <Marker position={marker} onClick={handleMarkerClick} />
 

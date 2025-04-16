@@ -1,19 +1,19 @@
 import { useRouter } from "next/navigation";
 import { categories } from "@/data/product-category/products-category";
 import { convertToTree } from "@/ultils/treeParent";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Menu, MenuProps } from "antd";
 import "./style.scss";
 import removeEmptyChildren from "@/ultils/removeEmptyChildren";
+import { usePathname } from "next/navigation";
 
 export default function HeaderMenu() {
   const router = useRouter();
   const [current, setCurrent] = useState("home");
+  const pathname = usePathname();
 
   const onClick: MenuProps["onClick"] = (e) => {
-    console.log('>>>check: ', e.key)
     setCurrent(e.key);
-    // Dựa vào key, chuyển hướng (ví dụ: dùng slug, key tương ứng)
     if (e.key === "home") {
       router.push("/");
     } else if (e.key === "news") {
@@ -30,23 +30,29 @@ export default function HeaderMenu() {
     }
   };
 
-
   // Chuyển đổi sang tree
   const treeData = convertToTree(categories);
   // Thêm 2 mục bổ sung
-  treeData.unshift(
-    {
-      key: "home",
-      label: "Trang chủ",
-      slug: "/",
-    }
-  );
+  treeData.unshift({
+    key: "home",
+    label: "Trang chủ",
+    slug: "/",
+  });
   treeData.push(
-    { key: "news", label: "Tin tức", slug: "tin-tuc"},
-    { key: "contact", label: "Liên hệ", slug: "lien-he"}
+    { key: "news", label: "Tin tức", slug: "tin-tuc" },
+    { key: "contact", label: "Liên hệ", slug: "lien-he" }
   );
 
   treeData.forEach(removeEmptyChildren);
+
+  useEffect(() => {
+    if (pathname.length > 0) {
+      const menuSelected = treeData.find(
+        (item) => item.slug === pathname.slice(1)
+      );
+      setCurrent(menuSelected?.key ?? "home");
+    }
+  }, [pathname, treeData]);
 
   return (
     <Menu
