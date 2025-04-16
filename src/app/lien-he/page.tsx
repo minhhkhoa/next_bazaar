@@ -9,6 +9,7 @@ import {
 import React from "react";
 import type { FormProps } from "antd";
 import { Button, Form, Input } from "antd";
+import GoogleMapComponent from "@/components/GoogleMap/GoogleMapComponent";
 
 type FieldType = {
   username?: string;
@@ -27,7 +28,7 @@ const onFinishFailed: FormProps<FieldType>["onFinishFailed"] = (errorInfo) => {
 export default function PageLienHe() {
   return (
     <>
-      <div className="flex gap-5 px-30">
+      <div className="flex gap-5 px-30 pt-4">
         {/* khối trái */}
         <div className="flex-1">
           {/* khối thông tin */}
@@ -135,7 +136,7 @@ export default function PageLienHe() {
 
         {/* Khối phải */}
         <div className="flex-1">
-          gg map
+          <GoogleMapComponent apiKey={(process.env.GOOGLE_MAP_API_KEY) as string} />
         </div>
       </div>
     </>
