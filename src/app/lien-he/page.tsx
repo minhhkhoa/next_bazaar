@@ -28,7 +28,7 @@ const onFinishFailed: FormProps<FieldType>["onFinishFailed"] = (errorInfo) => {
 export default function PageLienHe() {
   return (
     <>
-      <div className="flex gap-5 px-30 pt-4">
+      <div className="flex flex-col lg:flex-row gap-5 px-30 p-4">
         {/* khối trái */}
         <div className="flex-1">
           {/* khối thông tin */}
@@ -136,7 +136,9 @@ export default function PageLienHe() {
 
         {/* Khối phải */}
         <div className="flex-1">
-          <GoogleMapComponent apiKey={(process.env.GOOGLE_MAP_API_KEY) as string} />
+          <GoogleMapComponent
+            apiKey={process.env.GOOGLE_MAP_API_KEY as string}
+          />
         </div>
       </div>
     </>
