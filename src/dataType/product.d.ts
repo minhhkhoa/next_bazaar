@@ -27,6 +27,7 @@ export const ProductSchema = z.object({
   stock: z.number(),
   thumbnail: z.string(),
   status: z.string(),
+  featured: z.string().optional(),
   position: z.number(),
   deleted: z.boolean(),
   product_category_id: z.string(),
@@ -34,3 +35,5 @@ export const ProductSchema = z.object({
   updatedAt: DateSchema,
   updatedBy: z.array(UpdatedBySchema),
 });
+
+export type Products = z.infer<typeof ProductSchema>;
