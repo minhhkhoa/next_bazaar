@@ -6,6 +6,8 @@ export const NewContent = z.object({
   image: z.string
 });
 
+export type NewContentType = z.infer<typeof NewContent>;
+
 export const NewsSchema = z.object({
   id: z.union([z.string(), z.number()]),
   title: z.string(),
