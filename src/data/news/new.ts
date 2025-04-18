@@ -1,6 +1,6 @@
-import { News } from "@/dataType/new";
+import { NewsCategoryType, NewsType } from "@/dataType/new";
 
-export const news: News[] = [
+export const News: NewsType[] = [
   {
     id: 1,
     title: "Cách phối đồ hè nam",
@@ -30,6 +30,7 @@ export const news: News[] = [
     url: "https://bizweb.dktcdn.net/100/455/315/articles/prada-men-xuan-he-2022-cam-hung-tu-ngay-he.jpg?v=1653638966533",
     author: "Cafein Team",
     date_publish: "12/4/2025",
+    featured: true,
   },
 
   {
@@ -99,6 +100,7 @@ export const news: News[] = [
     url: "https://bizweb.dktcdn.net/100/455/315/articles/chang-mac-gi-khi-du-tiec-367.png?v=1653634327270",
     author: "kakarot",
     date_publish: "29/09/2019",
+    featured: true,
   },
 
   {
@@ -130,6 +132,7 @@ export const news: News[] = [
     url: "https://bizweb.dktcdn.net/100/455/315/articles/phoi-do-voi-ao-hoodie-be-gai-banner.jpg?v=1653633795413",
     author: "cadic",
     date_publish: "30/10/2010",
+    featured: true,
   },
 
   {
@@ -216,5 +219,56 @@ export const news: News[] = [
     url: "https://bizweb.dktcdn.net/100/455/315/articles/bo-tui-19-cach-phoi-blazer-phong-cach-cho-nang-xuong-pho.jpg?v=1653627040613",
     author: "bulma",
     date_publish: "14/4/2023",
+    featured: true,
+  },
+];
+
+
+export const NewsCategory: NewsCategoryType[] = [
+  {
+    key: "tin-tuc-thoi-trang",
+    label: "Tin tức thời trang",
+    children: [
+      {
+        key: "thoi-trang-trong-nuoc",
+        label: "Thời trang trong nước",
+      },
+      {
+        key: "thoi-trang-quoc-te",
+        label: "Thời trang quốc tế",
+      },
+      {
+        key: "bo-suu-tap-hot",
+        label: "Bộ sử tập hot",
+      },
+      {
+        key: "xu-huong-thoi-trang",
+        label: "Xu hướng thời trang",
+      },
+    ],
+  },
+  {
+    key: "meo-vat-hay",
+    label: "Mẹo vặt hay",
+    children: [
+      {
+        key: "lam-sao-giu-do-luon-thom-mat",
+        label: "Làm sao giữ đồ luôn thơm mát",
+      },
+    ],
+  },
+  {
+    key: "sao-mac-dep",
+    label: "Sao mặc đẹp",
+    children: [
+      {
+        key: "phoi-do-hop-mau",
+        label: "Phối đồ hợp màu",
+      },
+    ],
+  },
+  {
+    key: "tu-van-hoi-dap",
+    label: "Tư vấn - Hỏi đáp",
   },
 ];
