@@ -11,10 +11,13 @@ import {
 import { Col, Divider, Menu, Row } from "antd";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 export default function PageNews() {
   const { width } = useWindowSize();
+  const router = useRouter();
+
   return (
     <>
       {(width ?? 0) <= 1024 && (
@@ -95,7 +98,12 @@ export default function PageNews() {
             {News.map((item: NewsType) => {
               const { content } = item;
               return (
-                <Col key={item.id} xs={24} md={12}>
+                <Col
+                  onClick={() => router.push(`/tin-tuc/${item.id}`)}
+                  key={item.id}
+                  xs={24}
+                  md={12}
+                >
                   <div className="flex flex-col bg-white p-4 shadow rounded gap-2 cursor-pointer">
                     <div className="flex items-center justify-center">
                       <Image
@@ -123,7 +131,7 @@ export default function PageNews() {
 
                     <div className="line-clamp-2">{content[0].description}</div>
 
-                    <Link href={`/news/${item.id}`}>
+                    <Link href={`/tin-tuc/${item.id}`}>
                       Xem chi tiết{" "}
                       <ArrowRightOutlined style={{ color: "#fe9614" }} />
                     </Link>
