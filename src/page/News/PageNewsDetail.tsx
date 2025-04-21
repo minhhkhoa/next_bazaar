@@ -1,7 +1,7 @@
 "use client";
 
 import { getDetailNews } from "@/api/News/getDetailNews";
-import RightNews from "@/components/News/RightNews/RightNews";
+import RightNewsDetail from "@/components/News/RightNews/RightNewsDetail";
 import { NewsType } from "@/dataType/new";
 import React, { useCallback, useEffect } from "react";
 
@@ -26,7 +26,7 @@ export default function PageNewsDetail({ id }: { id: string }) {
   return (
     <div>
       {/* check xem có dữ liệu không đã */}
-      {newsDetail && <RightNews isNewsDetail={true} News={newsDetail} />}
+      {newsDetail && <RightNewsDetail News={newsDetail} />}
     </div>
   );
 }

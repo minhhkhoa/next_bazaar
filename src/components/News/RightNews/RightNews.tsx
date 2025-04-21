@@ -11,7 +11,6 @@ import { useRouter } from "next/navigation";
 import React from "react";
 
 export default function RightNews({
-  isNewsDetail = false,
   News,
 }: {
   isNewsDetail?: boolean;
@@ -22,11 +21,8 @@ export default function RightNews({
   return (
     <>
       <Row className="flex-3 !flex-col gap-5">
-        {!isNewsDetail ? (
-          <h1 className="text-2xl font-bold">Tin tức</h1>
-        ) : (
-          <h1 className="text-2xl font-bold">Chi tiết tin tức</h1>
-        )}
+        <h1 className="text-2xl font-bold">Tin tức</h1>
+
         <Row gutter={[16, 16]}>
           {News?.map((item: NewsType) => {
             const { content } = item;
@@ -64,12 +60,10 @@ export default function RightNews({
 
                   <div className="line-clamp-2">{content[0].description}</div>
 
-                  {!isNewsDetail && (
-                    <Link href={`/tin-tuc/${item.id}`}>
-                      Xem chi tiết{" "}
-                      <ArrowRightOutlined style={{ color: "#fe9614" }} />
-                    </Link>
-                  )}
+                  <Link href={`/tin-tuc/${item.id}`}>
+                    Xem chi tiết{" "}
+                    <ArrowRightOutlined style={{ color: "#fe9614" }} />
+                  </Link>
                 </div>
               </Col>
             );
