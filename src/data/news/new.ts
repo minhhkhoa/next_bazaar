@@ -92,7 +92,7 @@ export const News: NewsType[] = [
       {
         label: "Quần jean jogger",
         description:
-          "Những chàng trai không thích những set đồ quá an toàn thì có thể chọn cho mình những chiếc quần jean jogger để mix cùng áo sơ mi nam.<br/> <br/>Một chiếc áo sơ mi trắng đơn giản hay thậm chí là áo sơ mi hoa hòe hoa sói màu mè cũng có thể kết hợp siêu hoàn hảo với những chiếc quần jogger. <br/> <br/>Các bạn có thể đi cùng với một đôi giày martin 8 lỗ hay giày martin đế cao, một đôi boots cũng là sự lựa chọn không tồi.",
+          "Những chàng trai không thích những set đồ quá an toàn thì có thể chọn cho mình những chiếc quần jean jogger để mix cùng áo sơ mi nam.<br/>Một chiếc áo sơ mi trắng đơn giản hay thậm chí là áo sơ mi hoa hòe hoa sói màu mè cũng có thể kết hợp siêu hoàn hảo với những chiếc quần jogger. <br/>Các bạn có thể đi cùng với một đôi giày martin 8 lỗ hay giày martin đế cao, một đôi boots cũng là sự lựa chọn không tồi.",
         image:
           "https://bizweb.dktcdn.net/100/455/315/files/ao-so-mi-nam-mix-jogger-cbe139ef8fd34f3d8be679d52d8c2da3.jpg?v=1653634218821",
       },
