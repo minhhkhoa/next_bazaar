@@ -14,7 +14,7 @@ export default function RightNewsDetail({
 
   return (
     <>
-      <Row className="flex-3 !flex-col gap-5">
+      <Row className="flex-3 !flex-col gap-5 px-5">
         <h1 className="text-3xl font-bold">{NewsDetail?.title}</h1>
         <div className="flex gap-3 font-medium text-[#808080]">
           <div>

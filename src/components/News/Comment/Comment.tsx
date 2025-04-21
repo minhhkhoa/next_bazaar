@@ -29,9 +29,9 @@ const Comment: React.FC = () => (
     autoComplete="off"
     className="w-full flex flex-col"
   >
-    <div className="flex">
+    <div className="flex !flex-row md:flex-col gap-5">
       <Form.Item<FieldType>
-        style={{ width: "40%" }}
+        style={{ width: "37%" }}
         name="username"
         rules={[{ required: true, message: "Please input your username!" }]}
       >
