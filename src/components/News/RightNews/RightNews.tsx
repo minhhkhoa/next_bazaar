@@ -1,0 +1,81 @@
+import { NewsType } from "@/dataType/new";
+import {
+  ArrowRightOutlined,
+  ClockCircleOutlined,
+  UserOutlined,
+} from "@ant-design/icons";
+import { Col, Row } from "antd";
+import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import React from "react";
+
+export default function RightNews({
+  isNewsDetail = false,
+  News,
+}: {
+  isNewsDetail?: boolean;
+  News: NewsType[];
+}) {
+  const router = useRouter();
+
+  return (
+    <>
+      <Row className="flex-3 !flex-col gap-5">
+        {!isNewsDetail ? (
+          <h1 className="text-2xl font-bold">Tin tức</h1>
+        ) : (
+          <h1 className="text-2xl font-bold">Chi tiết tin tức</h1>
+        )}
+        <Row gutter={[16, 16]}>
+          {News?.map((item: NewsType) => {
+            const { content } = item;
+            return (
+              <Col
+                onClick={() => router.push(`/tin-tuc/${item.id}`)}
+                key={item.id}
+                xs={24}
+                md={12}
+              >
+                <div className="flex flex-col bg-white p-4 shadow rounded gap-2 cursor-pointer">
+                  <div className="flex items-center justify-center">
+                    <Image
+                      src={item.url}
+                      alt={item.title}
+                      width="0"
+                      height="0"
+                      sizes="100vw"
+                      className=" w-full h-auto object-contain rounded-2xl"
+                    />
+                  </div>
+                  <div className="font-bold text-2xl">{item.title}</div>
+
+                  <div className="flex gap-3 italic font-medium">
+                    <div>
+                      <UserOutlined className="px-2" />
+                      {item.author}
+                    </div>
+                    <>|</>
+                    <div>
+                      <ClockCircleOutlined className="px-2" />
+                      {item.date_publish}
+                    </div>
+                  </div>
+
+                  <div className="line-clamp-2">{content[0].description}</div>
+
+                  {!isNewsDetail && (
+                    <Link href={`/tin-tuc/${item.id}`}>
+                      Xem chi tiết{" "}
+                      <ArrowRightOutlined style={{ color: "#fe9614" }} />
+                    </Link>
+                  )}
+                </div>
+              </Col>
+            );
+          })}
+        </Row>
+      </Row>
+    </>
+  );
+}

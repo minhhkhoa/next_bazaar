@@ -1,4 +1,4 @@
-import PageNewsDetail from "@/page/News/NewsDetail";
+import PageNewsDetail from "@/page/News/PageNewsDetail";
 import React from "react";
 
 //- khi truy cập vào đúng đường dẫn động [id] ví dụ: localhost:3000/tin-tuc/1
