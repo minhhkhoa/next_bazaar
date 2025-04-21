@@ -48,7 +48,8 @@ export default function HeaderMenu() {
   useEffect(() => {
     if (pathname.length > 0) {
       const menuSelected = treeData.find(
-        (item) => item.slug === pathname.slice(1)
+        (item) => item.slug === pathname.split("/")[1]
+        //- với cách này nó sẽ lấy ra root url ví dụ nếu: localhost::3000/thoi-trang/thoi-trang-nam/1 thì nó sẽ lấy ra đúng thoi-trang
       );
       setCurrent(menuSelected?.key ?? "home");
     }
