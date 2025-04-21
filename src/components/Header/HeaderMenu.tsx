@@ -22,7 +22,6 @@ export default function HeaderMenu() {
       router.push("/lien-he");
     } else {
       // Nếu có menu con từ categories
-      // Bạn có thể xử lý chuyển hướng dựa vào dữ liệu trong tree, ví dụ:
       const clicked = treeData.find((item) => item.key === e.key);
       if (clicked && clicked.slug) {
         router.push(`/${clicked.slug}`);
