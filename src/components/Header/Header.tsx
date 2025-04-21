@@ -5,6 +5,7 @@ import Link from "next/link";
 import SearchProduct from "../Search/SearchProduct";
 import type { DrawerProps, MenuProps } from "antd";
 import {
+  CloseOutlined,
   MenuFoldOutlined,
   PhoneOutlined,
   ShoppingCartOutlined,
@@ -17,6 +18,8 @@ import { categories } from "@/data/product-category/products-category";
 import { convertToTree } from "@/ultils/treeParent";
 import { useState } from "react";
 import removeEmptyChildren from "@/ultils/removeEmptyChildren";
+import { useRouter } from "next/navigation";
+
 
 const items: MenuProps["items"] = [
   {
@@ -38,20 +41,49 @@ const items: MenuProps["items"] = [
 ];
 
 export default function Header() {
+    const router = useRouter();
+    const [openDrawer, setOpenDrawer] = useState(false);
+  
   const treeData = convertToTree(categories);
   treeData.forEach(removeEmptyChildren);
 
+  treeData.unshift({
+    key: "home",
+    label: "Trang chủ",
+    slug: "/",
+  });
+  treeData.push(
+    { key: "news", label: "Tin tức", slug: "tin-tuc" },
+    { key: "contact", label: "Liên hệ", slug: "lien-he" }
+  );
 
-  const [open, setOpen] = useState(false);
+    const onClick: MenuProps["onClick"] = (e) => {
+      if (e.key === "home") {
+        router.push("/");
+      } else if (e.key === "news") {
+        router.push("/tin-tuc");
+      } else if (e.key === "contact") {
+        router.push("/lien-he");
+      } else {
+        // Nếu có menu con từ categories
+        const clicked = treeData.find((item) => item.key === e.key);
+        if (clicked && clicked.slug) {
+          router.push(`/${clicked.slug}`);
+        }
+      }
+      setOpenDrawer(false);
+    };
+  
+
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [placement, setPlacement] = useState<DrawerProps["placement"]>("left");
 
   const showDrawer = () => {
-    setOpen(true);
+    setOpenDrawer(true);
   };
 
   const onClose = () => {
-    setOpen(false);
+    setOpenDrawer(false);
   };
 
   const { width } = useWindowSize();
@@ -113,16 +145,24 @@ export default function Header() {
                   placement={placement}
                   closable={false}
                   onClose={onClose}
-                  open={open}
+                  open={openDrawer}
                   key={placement}
                 >
                   <Menu
                     mode="inline"
                     defaultSelectedKeys={["1"]}
+                    onClick={onClick}
                     defaultOpenKeys={["sub1"]}
                     style={{ height: "100%" }}
                     items={treeData}
                   />
+
+                  <span
+                    className="absolute top-3 right-5 cursor-pointer text-[#000000] text-xl"
+                    onClick={onClose}
+                  >
+                    <CloseOutlined />
+                  </span>
                 </Drawer>
               </>
             )}
