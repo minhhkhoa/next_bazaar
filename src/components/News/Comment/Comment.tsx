@@ -58,7 +58,8 @@ const Comment: React.FC = () => (
       <Button
         type="primary"
         htmlType="submit"
-        className="!bg-orange-500 text-white !border-orange-500 hover:!bg-white hover:!text-orange-500 hover:!border-orange-500 transition duration-300 ease-in-out"
+        className="!bg-orange-500 text-white !border-orange-500 hover:!bg-white hover:!text-orange-500 hover:!border-orange-500 transition duration-300 
+        ease-in-out"
       >
         Gửi thông tin
       </Button>
