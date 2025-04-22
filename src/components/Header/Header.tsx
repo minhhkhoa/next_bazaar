@@ -25,7 +25,7 @@ const items: MenuProps["items"] = [
   {
     key: "1",
     label: (
-      <Link target="_blank" rel="noopener noreferrer" href="/login">
+      <Link href="/login">
         Đăng nhập
       </Link>
     ),
@@ -33,7 +33,7 @@ const items: MenuProps["items"] = [
   {
     key: "2",
     label: (
-      <Link target="_blank" rel="noopener noreferrer" href="/register">
+      <Link href="/register">
         Đăng ký
       </Link>
     ),
