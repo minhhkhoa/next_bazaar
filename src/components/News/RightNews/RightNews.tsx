@@ -8,6 +8,7 @@ import { Col, Row } from "antd";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { motion } from "framer-motion";
 import React from "react";
 
 export default function RightNews({
@@ -33,7 +34,13 @@ export default function RightNews({
                 xs={24}
                 md={12}
               >
-                <div className="flex flex-col bg-white p-4 shadow rounded gap-2 cursor-pointer">
+                <motion.div
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, ease: "easeOut" }}
+                  viewport={{ once: true }}
+                  className="flex flex-col bg-white p-4 shadow rounded gap-2 cursor-pointer"
+                >
                   <div className="flex items-center justify-center">
                     <Image
                       src={item.url}
@@ -64,7 +71,7 @@ export default function RightNews({
                     Xem chi tiết{" "}
                     <ArrowRightOutlined style={{ color: "#fe9614" }} />
                   </Link>
-                </div>
+                </motion.div>
               </Col>
             );
           })}
