@@ -36,4 +36,4 @@ export const ProductSchema = z.object({
   updatedBy: z.array(UpdatedBySchema),
 });
 
-export type Products = z.infer<typeof ProductSchema>;
+export type ProductsType = z.infer<typeof ProductSchema>;
