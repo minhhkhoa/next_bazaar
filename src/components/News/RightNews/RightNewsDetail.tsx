@@ -4,6 +4,8 @@ import { Divider, Row } from "antd";
 import Image from "next/image";
 import React from "react";
 import Comment from "../Comment/Comment";
+import { motion } from "framer-motion";
+
 
 export default function RightNewsDetail({
   NewsDetail,
@@ -39,7 +41,13 @@ export default function RightNewsDetail({
                 className="my-5"
                 dangerouslySetInnerHTML={{ __html: item.description }}
               ></div>
-              <div className="flex items-center justify-center">
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+                viewport={{ once: true }}
+                className="flex items-center justify-center"
+              >
                 <Image
                   src={item.image}
                   alt={"alt"}
@@ -48,13 +56,15 @@ export default function RightNewsDetail({
                   sizes="100vw"
                   className=" w-[500px] h-[300px] object-cover rounded-[8px]"
                 />
-              </div>
+              </motion.div>
             </div>
           ))}
         </div>
         <div className="w-full">
-          <Divider className="!w-[40%]"/>
-          <h1 className="text-2xl font-extralight my-5">Viết bình luận của bạn</h1>
+          <Divider className="!w-[40%]" />
+          <h1 className="text-2xl font-extralight my-5">
+            Viết bình luận của bạn
+          </h1>
           <Comment />
         </div>
       </Row>

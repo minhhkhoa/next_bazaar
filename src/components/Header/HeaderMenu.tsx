@@ -22,7 +22,9 @@ export default function HeaderMenu() {
       router.push("/lien-he");
     } else {
       // Nếu có menu con từ categories
-      const clicked = treeData.find((item) => item.key === e.key);
+      const clicked = treeData.find(
+        (item) => item.key === e.keyPath[(e.keyPath.length) - 1] //- chỗ này chưa ổn đâu sẽ làm lại sau
+      );
       if (clicked && clicked.slug) {
         router.push(`/${clicked.slug}`);
       }
