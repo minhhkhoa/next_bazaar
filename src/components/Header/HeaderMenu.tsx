@@ -26,7 +26,7 @@ export default function HeaderMenu() {
         (item) => item.key === e.keyPath[(e.keyPath.length) - 1] //- chỗ này chưa ổn đâu sẽ làm lại sau
       );
       if (clicked && clicked.slug) {
-        router.push(`/${clicked.slug}`);
+        router.push(`/${clicked.slug}?categoryId=${e.key}`);
       }
     }
   };

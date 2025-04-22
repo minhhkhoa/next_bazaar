@@ -1,46 +1,6 @@
 export const products = [
   {
     _id: {
-      $oid: "66d70dffabdc82a346e78922",
-    },
-    title: "ss A23",
-    description: "<p>OPPO F19 is officially announced on April 2021.</p>",
-    price: 280,
-    discountPercentage: 17,
-    stock: 123,
-    thumbnail:
-      "data:image/jpeg;base64,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",
-    status: "active",
-    position: 41,
-    deleted: false,
-    product_category_id: "66f60f7fab595b24f45f573c",
-    slug: "ss-a23",
-    updatedAt: {
-      $date: "2025-01-16T13:37:56.149Z",
-    },
-    updatedBy: [
-      {
-        account_id: "66f2789afc7dd44d7226fd1a",
-        updatedAt: {
-          $date: "2024-11-08T02:46:55.173Z",
-        },
-        _id: {
-          $oid: "672d7b9fad71a415b861f6f5",
-        },
-      },
-      {
-        account_id: "66f2789afc7dd44d7226fd1a",
-        updatedAt: {
-          $date: "2025-01-16T02:31:41.788Z",
-        },
-        _id: {
-          $oid: "67886f8df2a70b026006740a",
-        },
-      },
-    ],
-  },
-  {
-    _id: {
       $oid: "66d70dffabdc82a346e78923",
     },
     title: "SamSung P30",
@@ -74,80 +34,44 @@ export const products = [
   },
   {
     _id: {
-      $oid: "66d70dffabdc82a346e78924",
+      $oid: "66d70dffabdc82a346e78922",
     },
-    title: "MacBook Pro",
-    description:
-      "<p>MacBook Pro 2021 with mini-LED display may launch between September, November</p>",
-    price: 1749,
-    discountPercentage: 1222,
-    stock: 83,
-    thumbnail: "/uploads/1726134915820-Nitro_Wallpaper_07_3840x2400.jpg",
-    status: "inactive",
-    position: 7,
-    deleted: true,
+    title: "Samsung A23",
+    description: "<p>OPPO F19 is officially announced on April 2021.</p>",
+    price: 280,
+    discountPercentage: 17,
+    stock: 123,
+    thumbnail:
+      "data:image/jpeg;base64,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",
+    status: "active",
+    position: 41,
+    deleted: false,
+    product_category_id: "66f60f7fab595b24f45f573c",
+    slug: "samsung-a23",
     updatedAt: {
-      $date: "2025-01-23T07:50:38.681Z",
+      $date: "2025-04-22T14:42:44.514Z",
     },
-    slug: "macbook-pro",
-    deletedBy: {
-      account_id: "66f2789afc7dd44d7226fd1a",
-      deletedAt: {
-        $date: "2024-11-08T02:47:08.362Z",
-      },
-    },
-    product_category_id: "66f60f88ab595b24f45f5749",
     updatedBy: [
       {
         account_id: "66f2789afc7dd44d7226fd1a",
         updatedAt: {
-          $date: "2025-01-17T03:59:46.210Z",
+          $date: "2024-11-08T02:46:55.173Z",
         },
         _id: {
-          $oid: "6789d5b2d7c5a63d3ab62c00",
+          $oid: "672d7b9fad71a415b861f6f5",
         },
       },
-    ],
-  },
-  {
-    _id: {
-      $oid: "66e3a3ac4b930efed514a4fc",
-    },
-    title: "sp1 abc ne",
-    description: "<p>mo ta sp1</p>",
-    price: 30,
-    discountPercentage: 2,
-    stock: 34,
-    thumbnail: "/uploads/1726194604841-Nitro_Wallpaper_05_3840x2400.jpg",
-    status: "inactive",
-    position: 20,
-    deleted: true,
-    createdAt: {
-      $date: "2024-09-13T02:30:04.860Z",
-    },
-    updatedAt: {
-      $date: "2025-01-23T07:49:23.050Z",
-    },
-    slug: "sp1-abc-ne",
-    __v: 0,
-    deletedBy: {
-      account_id: "66f2789afc7dd44d7226fd1a",
-      deletedAt: {
-        $date: "2024-11-08T02:25:05.889Z",
-      },
-    },
-    product_category_id: "66e98874e9abc9d422d29c93",
-    updatedBy: [
       {
         account_id: "66f2789afc7dd44d7226fd1a",
         updatedAt: {
-          $date: "2025-01-17T03:59:28.301Z",
+          $date: "2025-01-16T02:31:41.788Z",
         },
         _id: {
-          $oid: "6789d5a09494d55a3a97f6a9",
+          $oid: "67886f8df2a70b026006740a",
         },
       },
     ],
+    featured: "0",
   },
   {
     _id: {
@@ -326,150 +250,6 @@ export const products = [
       account_id: "66f2789afc7dd44d7226fd1a",
       deletedAt: {
         $date: "2024-11-07T15:19:54.636Z",
-      },
-    },
-  },
-  {
-    _id: {
-      $oid: "66f60f9cab595b24f45f576a",
-    },
-    title: "ss S23 ultra",
-    product_category_id: "66f60f7fab595b24f45f573c",
-    description: "",
-    price: 0,
-    discountPercentage: 0,
-    stock: 0,
-    status: "inactive",
-    featured: "0",
-    position: 31,
-    createdBy: {
-      account_id: "66f2789afc7dd44d7226fd1a",
-      createdAt: {
-        $date: "2024-09-27T01:51:24.223Z",
-      },
-    },
-    deleted: true,
-    updatedBy: [],
-    createdAt: {
-      $date: "2024-09-27T01:51:24.223Z",
-    },
-    updatedAt: {
-      $date: "2025-01-23T07:50:31.746Z",
-    },
-    slug: "ss-s23-ultra",
-    __v: 0,
-    deletedBy: {
-      account_id: "66f2789afc7dd44d7226fd1a",
-      deletedAt: {
-        $date: "2024-11-08T02:24:53.563Z",
-      },
-    },
-  },
-  {
-    _id: {
-      $oid: "66f60fa9ab595b24f45f5787",
-    },
-    title: "iPhone 16proMax",
-    product_category_id: "66f60f88ab595b24f45f5749",
-    description: "",
-    price: 0,
-    discountPercentage: 0,
-    stock: 0,
-    status: "inactive",
-    featured: "0",
-    position: 32,
-    createdBy: {
-      account_id: "66f2789afc7dd44d7226fd1a",
-      createdAt: {
-        $date: "2024-09-27T01:51:37.859Z",
-      },
-    },
-    deleted: true,
-    updatedBy: [],
-    createdAt: {
-      $date: "2024-09-27T01:51:37.860Z",
-    },
-    updatedAt: {
-      $date: "2025-01-23T07:50:27.314Z",
-    },
-    slug: "iphone-16promax",
-    __v: 0,
-    deletedBy: {
-      account_id: "66f2789afc7dd44d7226fd1a",
-      deletedAt: {
-        $date: "2024-11-08T02:24:53.563Z",
-      },
-    },
-  },
-  {
-    _id: {
-      $oid: "66f60fe2ab595b24f45f57e4",
-    },
-    title: "iPhone4",
-    product_category_id: "66f60f88ab595b24f45f5749",
-    description: "",
-    price: 0,
-    discountPercentage: 0,
-    stock: 0,
-    status: "inactive",
-    featured: "0",
-    position: 32,
-    createdBy: {
-      account_id: "66f2789afc7dd44d7226fd1a",
-      createdAt: {
-        $date: "2024-09-27T01:52:34.520Z",
-      },
-    },
-    deleted: false,
-    updatedBy: [],
-    createdAt: {
-      $date: "2024-09-27T01:52:34.521Z",
-    },
-    updatedAt: {
-      $date: "2025-01-24T14:57:06.582Z",
-    },
-    slug: "iphone4",
-    __v: 0,
-    deletedBy: {
-      account_id: "66f2789afc7dd44d7226fd1a",
-      deletedAt: {
-        $date: "2024-11-08T02:24:53.563Z",
-      },
-    },
-  },
-  {
-    _id: {
-      $oid: "66f65b9bf97e840a2470ab63",
-    },
-    title: "realme",
-    product_category_id: "66f60f67ab595b24f45f5718",
-    description: "",
-    price: 0,
-    discountPercentage: 0,
-    stock: 0,
-    status: "inactive",
-    featured: "0",
-    position: 35,
-    createdBy: {
-      account_id: "66f2789afc7dd44d7226fd1a",
-      createdAt: {
-        $date: "2024-09-27T07:15:39.125Z",
-      },
-    },
-    deleted: true,
-    updatedBy: [],
-    createdAt: {
-      $date: "2024-09-27T07:15:39.127Z",
-    },
-    updatedAt: {
-      $date: "2025-01-23T07:49:57.203Z",
-    },
-    slug: "realme",
-    __v: 0,
-    deletedBy: {
-      account_id: "66f2789afc7dd44d7226fd1a",
-      deletedAt: {
-        $date: "2024-11-08T02:22:50.668Z",
       },
     },
   },
@@ -825,130 +605,6 @@ export const products = [
       $date: "2025-01-20T08:41:19.315Z",
     },
     slug: "iphone-16-fkt5clwCf",
-    __v: 0,
-  },
-  {
-    _id: {
-      $oid: "678bb472bcf9f77ede23471b",
-    },
-    title: "serum12",
-    product_category_id: "672d7a03ad71a415b861f4b7",
-    description: "<p>serum mowi</p>",
-    price: 123,
-    discountPercentage: 23,
-    stock: 12,
-    thumbnail:
-      "https://res.cloudinary.com/dj6jqey93/image/upload/v1737208945/t4s4y7tpvl0od7molyvx.png",
-    status: "inactive",
-    featured: "1",
-    position: 29,
-    createdBy: {
-      createdAt: {
-        $date: "2025-01-18T14:02:26.198Z",
-      },
-    },
-    deleted: true,
-    updatedBy: [],
-    createdAt: {
-      $date: "2025-01-18T14:02:26.199Z",
-    },
-    updatedAt: {
-      $date: "2025-01-26T06:06:00.939Z",
-    },
-    slug: "serum12",
-    __v: 0,
-  },
-  {
-    _id: {
-      $oid: "678bb6e7bcf9f77ede234764",
-    },
-    title: "ip 19",
-    product_category_id: "66f60f88ab595b24f45f5749",
-    description: "<p>ip 19 xịn vch lu&ocirc;n</p>",
-    price: 999,
-    discountPercentage: 12,
-    stock: 15,
-    thumbnail:
-      "https://res.cloudinary.com/dj6jqey93/image/upload/v1737209574/sbprojtb6eqh7hhhx6kw.png",
-    status: "inactive",
-    featured: "1",
-    position: 30,
-    createdBy: {
-      createdAt: {
-        $date: "2025-01-18T14:12:55.253Z",
-      },
-    },
-    deleted: false,
-    updatedBy: [],
-    createdAt: {
-      $date: "2025-01-18T14:12:55.255Z",
-    },
-    updatedAt: {
-      $date: "2025-01-20T09:47:28.867Z",
-    },
-    slug: "ip-19",
-    __v: 0,
-  },
-  {
-    _id: {
-      $oid: "678bb747bcf9f77ede234776",
-    },
-    title: "test",
-    product_category_id: "66e98874e9abc9d422d29c93",
-    description: "<p>gido</p>",
-    price: 123,
-    discountPercentage: 12,
-    stock: 2,
-    thumbnail:
-      "https://res.cloudinary.com/dj6jqey93/image/upload/v1737209671/fgh6afxzvjhtfuhlitj5.png",
-    status: "inactive",
-    featured: "1",
-    position: 31,
-    createdBy: {
-      createdAt: {
-        $date: "2025-01-18T14:14:31.380Z",
-      },
-    },
-    deleted: true,
-    updatedBy: [],
-    createdAt: {
-      $date: "2025-01-18T14:14:31.381Z",
-    },
-    updatedAt: {
-      $date: "2025-01-23T07:49:20.634Z",
-    },
-    slug: "test",
-    __v: 0,
-  },
-  {
-    _id: {
-      $oid: "678bb833bcf9f77ede234797",
-    },
-    title: "đồ nữ",
-    product_category_id: "66e98874e9abc9d422d29c93",
-    description: "<p>&aacute;o nữ nha</p>",
-    price: 12345,
-    discountPercentage: 12,
-    stock: 3,
-    thumbnail:
-      "https://res.cloudinary.com/dj6jqey93/image/upload/v1737209907/ume3bhrajxlwipqcmymu.png",
-    status: "inactive",
-    featured: "0",
-    position: 32,
-    createdBy: {
-      createdAt: {
-        $date: "2025-01-18T14:18:27.972Z",
-      },
-    },
-    deleted: true,
-    updatedBy: [],
-    createdAt: {
-      $date: "2025-01-18T14:18:27.972Z",
-    },
-    updatedAt: {
-      $date: "2025-01-23T07:49:18.499Z",
-    },
-    slug: "do-nu",
     __v: 0,
   },
   {
@@ -1425,7 +1081,7 @@ export const products = [
     _id: {
       $oid: "678e159f5e6b72bda440df0b",
     },
-    title: "Váycá tính",
+    title: "Váy cá tính",
     product_category_id: "66e98874e9abc9d422d29c93",
     description:
       '<pre id="tw-target-text" class="tw-data-text tw-text-large tw-ta" dir="ltr" data-placeholder="Bản dịch" data-ved="2ahUKEwj5jPel94OLAxVqsVYBHUIZNNMQ3ewLegQIChAV" aria-label="Bản dịch: trousers"><span class="Y2IQFc" lang="en">dress</span></pre>',
@@ -1448,9 +1104,9 @@ export const products = [
       $date: "2025-01-20T09:21:35.204Z",
     },
     updatedAt: {
-      $date: "2025-02-04T04:11:52.378Z",
+      $date: "2025-04-22T14:47:01.746Z",
     },
-    slug: "vayca-tinh",
+    slug: "vay-ca-tinh",
     __v: 0,
   },
   {
@@ -1784,13 +1440,13 @@ export const products = [
         $date: "2025-01-20T09:36:57.243Z",
       },
     },
-    deleted: true,
+    deleted: false,
     updatedBy: [],
     createdAt: {
       $date: "2025-01-20T09:36:57.243Z",
     },
     updatedAt: {
-      $date: "2025-02-28T01:12:11.687Z",
+      $date: "2025-04-22T14:39:59.155Z",
     },
     slug: "ao-phong-trang",
     __v: 0,
@@ -1800,8 +1456,8 @@ export const products = [
       $oid: "678e2cb3dce49af7a4500f75",
     },
     title: "Kính râm",
-    product_category_id: "66e982ad64a2b1093c10e617",
-    description: "",
+    product_category_id: "66e9888fe9abc9d422d29ca1",
+    description: "<p>K&iacute;nh r&acirc;m chất</p>",
     price: 45,
     discountPercentage: 15,
     stock: 25,
@@ -1821,7 +1477,7 @@ export const products = [
       $date: "2025-01-20T11:00:03.310Z",
     },
     updatedAt: {
-      $date: "2025-02-28T01:18:02.212Z",
+      $date: "2025-04-22T14:46:26.617Z",
     },
     slug: "kinh-ram",
     __v: 0,
@@ -1830,15 +1486,15 @@ export const products = [
     _id: {
       $oid: "6791a67d6e5735b03d5ac93c",
     },
-    title: "test",
+    title: "iphone 17",
     product_category_id: "66f60f88ab595b24f45f5749",
-    description: "<p>test</p>",
-    price: 1,
+    description: "<p>iphone 17 do</p>",
+    price: 14,
     discountPercentage: 1,
-    stock: 1,
+    stock: 13,
     thumbnail:
       "https://res.cloudinary.com/dj6jqey93/image/upload/v1737598588/w9gcbpaggoqwossbmtd0.png",
-    status: "inactive",
+    status: "active",
     featured: "1",
     position: 54,
     createdBy: {
@@ -1846,89 +1502,27 @@ export const products = [
         $date: "2025-01-23T02:16:29.346Z",
       },
     },
-    deleted: true,
+    deleted: false,
     updatedBy: [],
     createdAt: {
       $date: "2025-01-23T02:16:29.352Z",
     },
     updatedAt: {
-      $date: "2025-01-23T03:02:59.145Z",
+      $date: "2025-04-22T14:44:14.799Z",
     },
-    slug: "test-Gu1u6O5pF",
-    __v: 0,
-  },
-  {
-    _id: {
-      $oid: "6791a9e56e5735b03d5ac955",
-    },
-    title: "test2",
-    product_category_id: "66e982ad64a2b1093c10e617",
-    description: "<p>zxcj</p>",
-    price: 23,
-    discountPercentage: 3,
-    stock: 3,
-    thumbnail:
-      "https://res.cloudinary.com/dj6jqey93/image/upload/v1737599460/tz9vmmkl203xnuhj92jv.png",
-    status: "inactive",
-    featured: "0",
-    position: 55,
-    createdBy: {
-      createdAt: {
-        $date: "2025-01-23T02:31:01.522Z",
-      },
-    },
-    deleted: true,
-    updatedBy: [],
-    createdAt: {
-      $date: "2025-01-23T02:31:01.522Z",
-    },
-    updatedAt: {
-      $date: "2025-01-23T02:31:17.601Z",
-    },
-    slug: "test2",
-    __v: 0,
-  },
-  {
-    _id: {
-      $oid: "6791ab0b6e5735b03d5ac977",
-    },
-    title: "ndcx",
-    product_category_id: "66e982ad64a2b1093c10e617",
-    description: "<p>xcv</p>",
-    price: 1,
-    discountPercentage: 1,
-    stock: 1,
-    thumbnail:
-      "https://res.cloudinary.com/dj6jqey93/image/upload/v1737599754/pnmyr7yx7c37lhaatdxo.png",
-    status: "inactive",
-    featured: "0",
-    position: 56,
-    createdBy: {
-      createdAt: {
-        $date: "2025-01-23T02:35:55.150Z",
-      },
-    },
-    deleted: true,
-    updatedBy: [],
-    createdAt: {
-      $date: "2025-01-23T02:35:55.151Z",
-    },
-    updatedAt: {
-      $date: "2025-01-23T03:02:55.834Z",
-    },
-    slug: "ndcx",
+    slug: "iphone-17",
     __v: 0,
   },
   {
     _id: {
       $oid: "6791ac396e5735b03d5ac982",
     },
-    title: "zxc",
-    product_category_id: "66f60f88ab595b24f45f5749",
+    title: "Chân A 2 túi ốp",
+    product_category_id: "66e98874e9abc9d422d29c93",
     description: "<p>zxc</p>",
-    price: 1,
+    price: 12,
     discountPercentage: 1,
-    stock: 1,
+    stock: 12,
     thumbnail:
       "https://res.cloudinary.com/dj6jqey93/image/upload/v1737600056/b0fmijtjriersmrgopiy.png",
     status: "inactive",
@@ -1939,61 +1533,30 @@ export const products = [
         $date: "2025-01-23T02:40:57.858Z",
       },
     },
-    deleted: true,
+    deleted: false,
     updatedBy: [],
     createdAt: {
       $date: "2025-01-23T02:40:57.860Z",
     },
     updatedAt: {
-      $date: "2025-01-23T03:02:52.957Z",
+      $date: "2025-04-22T14:43:48.396Z",
     },
-    slug: "zxc",
-    __v: 0,
-  },
-  {
-    _id: {
-      $oid: "6791ac6b6e5735b03d5ac98d",
-    },
-    title: "zc",
-    product_category_id: "66f60f88ab595b24f45f5749",
-    description: "<p>xcv</p>",
-    price: 2,
-    discountPercentage: 3,
-    stock: 4,
-    thumbnail:
-      "https://res.cloudinary.com/dj6jqey93/image/upload/v1737600106/uori3cikmssptw77jori.png",
-    status: "inactive",
-    featured: "0",
-    position: 58,
-    createdBy: {
-      createdAt: {
-        $date: "2025-01-23T02:41:47.798Z",
-      },
-    },
-    deleted: true,
-    updatedBy: [],
-    createdAt: {
-      $date: "2025-01-23T02:41:47.799Z",
-    },
-    updatedAt: {
-      $date: "2025-01-23T03:02:50.531Z",
-    },
-    slug: "zc",
+    slug: "chan-a-2-tui-op",
     __v: 0,
   },
   {
     _id: {
       $oid: "6791af0526c4b18d5d9b5a5a",
     },
-    title: "a",
-    product_category_id: "66f60f88ab595b24f45f5749",
-    description: "<p>sd</p>",
-    price: 2,
+    title: "Áo Nam Cotton",
+    product_category_id: "66e9888fe9abc9d422d29ca1",
+    description: "<p>quần &aacute;o nam</p>",
+    price: 22,
     discountPercentage: 3,
-    stock: 1,
+    stock: 12,
     thumbnail:
       "https://res.cloudinary.com/dj6jqey93/image/upload/v1737600772/di90cb9bmcyboyayr19y.png",
-    status: "inactive",
+    status: "active",
     featured: "0",
     position: 60,
     createdBy: {
@@ -2001,23 +1564,23 @@ export const products = [
         $date: "2025-01-23T02:52:53.559Z",
       },
     },
-    deleted: true,
+    deleted: false,
     updatedBy: [],
     createdAt: {
       $date: "2025-01-23T02:52:53.559Z",
     },
     updatedAt: {
-      $date: "2025-01-23T02:57:59.894Z",
+      $date: "2025-04-22T14:44:52.941Z",
     },
-    slug: "a",
+    slug: "ao-nam-cotton",
     __v: 0,
   },
   {
     _id: {
       $oid: "67959ef3a58cb114b48e8e66",
     },
-    title: "sp moi",
-    product_category_id: "672d7a03ad71a415b861f4b7",
+    title: "Quần Tuytsi cách điệu",
+    product_category_id: "66e98874e9abc9d422d29c93",
     description: "<p>vbc</p>",
     price: 1,
     discountPercentage: 1,
@@ -2032,22 +1595,22 @@ export const products = [
         $date: "2025-01-26T02:33:23.003Z",
       },
     },
-    deleted: true,
+    deleted: false,
     updatedBy: [],
     createdAt: {
       $date: "2025-01-26T02:33:23.007Z",
     },
     updatedAt: {
-      $date: "2025-01-26T02:33:32.200Z",
+      $date: "2025-04-22T14:41:20.496Z",
     },
-    slug: "sp-moi",
+    slug: "quan-tuytsi-cach-dieu",
     __v: 0,
   },
   {
     _id: {
       $oid: "6795a02fa58cb114b48e8e99",
     },
-    title: "sp moi",
+    title: "Booster Serum",
     product_category_id: "672d7a03ad71a415b861f4b7",
     description: "<p>nbvb</p>",
     price: 2,
@@ -2063,15 +1626,15 @@ export const products = [
         $date: "2025-01-26T02:38:39.677Z",
       },
     },
-    deleted: true,
+    deleted: false,
     updatedBy: [],
     createdAt: {
       $date: "2025-01-26T02:38:39.678Z",
     },
     updatedAt: {
-      $date: "2025-01-26T02:38:56.888Z",
+      $date: "2025-04-22T14:42:14.646Z",
     },
-    slug: "sp-moi-K_lpYtbUf",
+    slug: "booster-serum",
     __v: 0,
   },
   {
@@ -2094,13 +1657,13 @@ export const products = [
         $date: "2025-01-26T02:43:59.866Z",
       },
     },
-    deleted: true,
+    deleted: false,
     updatedBy: [],
     createdAt: {
       $date: "2025-01-26T02:43:59.867Z",
     },
     updatedAt: {
-      $date: "2025-01-26T02:54:27.271Z",
+      $date: "2025-04-22T14:39:58.361Z",
     },
     slug: "serum-0EZN6bJQr",
     __v: 0,
@@ -2109,10 +1672,10 @@ export const products = [
     _id: {
       $oid: "6795a1cea58cb114b48e8ef6",
     },
-    title: "vc ",
+    title: "iphone 20",
     product_category_id: "66f60f88ab595b24f45f5749",
-    description: "<p>xcv</p>",
-    price: 2,
+    description: "<p>iphone 20</p>",
+    price: 244,
     discountPercentage: 3,
     stock: 4,
     thumbnail:
@@ -2125,151 +1688,27 @@ export const products = [
         $date: "2025-01-26T02:45:34.381Z",
       },
     },
-    deleted: true,
+    deleted: false,
     updatedBy: [],
     createdAt: {
       $date: "2025-01-26T02:45:34.381Z",
     },
     updatedAt: {
-      $date: "2025-01-26T02:45:47.166Z",
+      $date: "2025-04-22T14:45:44.827Z",
     },
-    slug: "vc",
-    __v: 0,
-  },
-  {
-    _id: {
-      $oid: "6795a268a58cb114b48e8f13",
-    },
-    title: "do moi ne",
-    product_category_id: "672d7a03ad71a415b861f4b7",
-    description: "<p>xcv</p>",
-    price: 1,
-    discountPercentage: 1,
-    stock: 1,
-    thumbnail:
-      "https://res.cloudinary.com/dj6jqey93/image/upload/v1737859690/autibgftrgoi8vd99fll.png",
-    status: "active",
-    featured: "0",
-    position: 63,
-    createdBy: {
-      createdAt: {
-        $date: "2025-01-26T02:48:08.827Z",
-      },
-    },
-    deleted: true,
-    updatedBy: [],
-    createdAt: {
-      $date: "2025-01-26T02:48:08.827Z",
-    },
-    updatedAt: {
-      $date: "2025-01-26T02:54:24.912Z",
-    },
-    slug: "do-moi-ne",
-    __v: 0,
-  },
-  {
-    _id: {
-      $oid: "6795a3dba58cb114b48e8f31",
-    },
-    title: "rrrr",
-    product_category_id: "66f60f88ab595b24f45f5749",
-    description: "<p>bn</p>",
-    price: 1,
-    discountPercentage: 1,
-    stock: 1,
-    thumbnail:
-      "https://res.cloudinary.com/dj6jqey93/image/upload/v1737860061/ynbit3gqtywcrxdvedy6.png",
-    status: "active",
-    featured: "0",
-    position: 64,
-    createdBy: {
-      createdAt: {
-        $date: "2025-01-26T02:54:19.545Z",
-      },
-    },
-    deleted: true,
-    updatedBy: [],
-    createdAt: {
-      $date: "2025-01-26T02:54:19.546Z",
-    },
-    updatedAt: {
-      $date: "2025-01-26T02:54:22.862Z",
-    },
-    slug: "rrrr",
-    __v: 0,
-  },
-  {
-    _id: {
-      $oid: "6795de4ad46c6113e7e88a87",
-    },
-    title: "sd",
-    product_category_id: "672d7a03ad71a415b861f4b7",
-    description: "<p>sd</p>",
-    price: 1,
-    discountPercentage: 1,
-    stock: 1,
-    thumbnail:
-      "https://res.cloudinary.com/dj6jqey93/image/upload/v1737875019/tkluak1nn9yn8pdpgr6e.png",
-    status: "active",
-    featured: "0",
-    position: 65,
-    createdBy: {
-      createdAt: {
-        $date: "2025-01-26T07:03:38.047Z",
-      },
-    },
-    deleted: true,
-    updatedBy: [],
-    createdAt: {
-      $date: "2025-01-26T07:03:38.051Z",
-    },
-    updatedAt: {
-      $date: "2025-01-26T07:03:49.110Z",
-    },
-    slug: "sd",
-    __v: 0,
-  },
-  {
-    _id: {
-      $oid: "6795ed0ad46c6113e7e88bb3",
-    },
-    title: "test",
-    product_category_id: "66f60f88ab595b24f45f5749",
-    description: "<p>&aacute;d</p>",
-    price: 1,
-    discountPercentage: 1,
-    stock: 1,
-    thumbnail:
-      "https://res.cloudinary.com/dj6jqey93/image/upload/v1737878795/jhndalomelpzshlybvla.png",
-    status: "active",
-    featured: "0",
-    position: 66,
-    createdBy: {
-      createdAt: {
-        $date: "2025-01-26T08:06:34.194Z",
-      },
-    },
-    deleted: true,
-    updatedBy: [],
-    createdAt: {
-      $date: "2025-01-26T08:06:34.195Z",
-    },
-    updatedAt: {
-      $date: "2025-01-26T08:07:47.799Z",
-    },
-    slug: "test-CjNhNXUiv",
+    slug: "iphone-20",
     __v: 0,
   },
   {
     _id: {
       $oid: "6795ed73d46c6113e7e88bc9",
     },
-    title: "test ne",
-    product_category_id: "66f60f88ab595b24f45f5749",
+    title: "Serum nobody",
+    product_category_id: "672d7a03ad71a415b861f4b7",
     description: "<p>xc</p>",
-    price: 11,
+    price: 114,
     discountPercentage: 1,
-    stock: 1,
+    stock: 14,
     thumbnail:
       "https://res.cloudinary.com/dj6jqey93/image/upload/v1737878901/atwtrpjfraxudmacnzp6.png",
     status: "active",
@@ -2280,77 +1719,271 @@ export const products = [
         $date: "2025-01-26T08:08:19.749Z",
       },
     },
-    deleted: true,
+    deleted: false,
     updatedBy: [],
     createdAt: {
       $date: "2025-01-26T08:08:19.750Z",
     },
     updatedAt: {
-      $date: "2025-01-26T08:08:35.241Z",
+      $date: "2025-04-22T14:45:25.601Z",
     },
-    slug: "test-ne",
+    slug: "serum-nobody",
     __v: 0,
   },
   {
     _id: {
-      $oid: "6795ed9bd46c6113e7e88be5",
+      $oid: "6807a5d3c1f4fd7e53e8b8c2",
     },
-    title: "ư",
-    product_category_id: "672d7a03ad71a415b861f4b7",
-    description: "<p>ư</p>",
-    price: 1,
-    discountPercentage: 1,
-    stock: 1,
+    title: "Laptop Asus Vivobook Go 15",
+    product_category_id: "678f66296ab2bf8a3fd8eb03",
+    description:
+      '<div class="box-specifi"><a class="active" data-group-id="32" data-index="1">\r\n<h3>Bộ xử l&yacute;</h3>\r\n</a>\r\n<ul class="text-specifi active">\r\n<li>\r\n<aside><strong>C&ocirc;ng nghệ CPU:<span class=""><a href="https://www.thegioididong.com/hoi-dap/chip-amd-la-gi-uu-va-nhuoc-diem-so-voi-chip-intel-1191868" target="_blank" rel="noopener">AMD Ryzen 5</a>&nbsp;- 7520U</span></strong></aside>\r\n</li>\r\n<li>\r\n<aside><strong>Số nh&acirc;n: 4</strong></aside>\r\n</li>\r\n<li>\r\n<aside><strong>Số luồng: 8</strong></aside>\r\n</li>\r\n<li>\r\n<aside><strong>Tốc độ CPU: <span class="">2.8GHz</span></strong></aside>\r\n</li>\r\n<li>\r\n<aside><strong>Tốc độ tối đa: <a class="tzLink" href="https://www.thegioididong.com/hoi-dap/turbo-boost-la-gi-cai-dat-turbo-boost-nhu-the-nao-884498" target="_blank" rel="noopener">Turbo Boost 4.3 GHz</a></strong></aside>\r\n</li>\r\n</ul>\r\n</div>\r\n<div class="box-specifi"><a class="active" data-group-id="34" data-index="3">\r\n<h3>Bộ nhớ RAM, Ổ cứng</h3>\r\n</a>\r\n<ul class="text-specifi active">\r\n<li>\r\n<aside><strong>RAM:<a class="tzLink" href="https://www.thegioididong.com/hoi-dap/ram-lap-top-la-gi-dung-luong-bao-nhieu-la-du-1172167" target="_blank" rel="noopener">16 GB</a></strong></aside>\r\n</li>\r\n<li>\r\n<aside><strong>Loại RAM:<span class="">LPDDR5 (Onboard)</span></strong></aside>\r\n<aside></aside>\r\n</li>\r\n<li>\r\n<aside><strong>Tốc độ Bus RAM:<span class="">5500 MHz</span></strong></aside>\r\n<aside></aside>\r\n</li>\r\n<li>\r\n<aside><strong>Hỗ trợ RAM tối đa:<span class="">Kh&ocirc;ng hỗ trợ n&acirc;ng cấp</span></strong></aside>\r\n<aside></aside>\r\n</li>\r\n<li>\r\n<aside><strong>Ổ cứng:<a class="tzLink" href="https://www.thegioididong.com/hoi-dap/tim-hieu-ve-chuan-ssd-m2-986461#hmenuid1" target="_blank" rel="noopener">512 GB SSD NVMe PCIe (C&oacute; thể th&aacute;o ra, lắp thanh kh&aacute;c tối đa 1 TB)</a></strong></aside>\r\n</li>\r\n</ul>\r\n</div>\r\n<div class="box-specifi">\r\n<ul class="text-specifi active">\r\n<li>&nbsp;</li>\r\n</ul>\r\n</div>',
+    price: 12,
+    discountPercentage: 2,
+    stock: 2222,
     thumbnail:
-      "https://res.cloudinary.com/dj6jqey93/image/upload/v1737878940/hcdsidb5lgo7dnxcugvm.png",
+      "https://res.cloudinary.com/dj6jqey93/image/upload/v1745331666/iqxy8oe9x5wjynfklqfl.png",
     status: "active",
-    featured: "0",
-    position: 68,
+    featured: "1",
+    position: 70,
     createdBy: {
       createdAt: {
-        $date: "2025-01-26T08:08:59.136Z",
+        $date: "2025-04-22T14:21:07.626Z",
       },
     },
-    deleted: true,
+    deleted: false,
     updatedBy: [],
     createdAt: {
-      $date: "2025-01-26T08:08:59.136Z",
+      $date: "2025-04-22T14:21:07.633Z",
     },
     updatedAt: {
-      $date: "2025-01-26T08:09:03.461Z",
+      $date: "2025-04-22T14:21:07.633Z",
     },
-    slug: "u",
+    slug: "laptop-asus-vivobook-go-15",
     __v: 0,
   },
   {
     _id: {
-      $oid: "679ee75885720b7f745a1748",
+      $oid: "6807a697c1f4fd7e53e8b8e3",
     },
-    title: "aa",
-    product_category_id: "672d7a03ad71a415b861f4b7",
-    description: "<p>a</p>",
-    price: 1,
+    title: "Laptop HP 15",
+    product_category_id: "678f66296ab2bf8a3fd8eb03",
+    description:
+      '<div class="box-specifi"><a class="active" data-group-id="32" data-index="1">\r\n<h3>Bộ xử l&yacute;</h3>\r\n</a>\r\n<ul class="text-specifi active">\r\n<li>\r\n<aside><strong>C&ocirc;ng nghệ CPU:<span class=""><a href="https://www.thegioididong.com/hoi-dap/chip-amd-la-gi-uu-va-nhuoc-diem-so-voi-chip-intel-1191868" target="_blank" rel="noopener">AMD Ryzen 5</a>&nbsp;- 7430U</span></strong></aside>\r\n</li>\r\n<li>\r\n<aside><strong>Số nh&acirc;n: 6</strong></aside>\r\n</li>\r\n<li>\r\n<aside><strong>Số luồng:12</strong></aside>\r\n</li>\r\n<li>\r\n<aside><strong>Tốc độ CPU:<span class="">2.30 GHz</span></strong></aside>\r\n</li>\r\n<li>\r\n<aside><strong>Tốc độ tối đa:<a class="tzLink" href="https://www.thegioididong.com/hoi-dap/turbo-boost-la-gi-cai-dat-turbo-boost-nhu-the-nao-884498" target="_blank" rel="noopener">Turbo Boost 4.3 GHz</a></strong></aside>\r\n</li>\r\n</ul>\r\n</div>\r\n<div class="box-specifi"><a class="active" data-group-id="34" data-index="3">\r\n<h3>Bộ nhớ RAM, Ổ cứng</h3>\r\n</a>\r\n<ul class="text-specifi active">\r\n<li>\r\n<aside><strong>RAM:<a class="tzLink" href="https://www.thegioididong.com/hoi-dap/ram-lap-top-la-gi-dung-luong-bao-nhieu-la-du-1172167" target="_blank" rel="noopener">16 GB</a></strong></aside>\r\n</li>\r\n<li>\r\n<aside><strong>Loại RAM:<a class="tzLink" href="https://www.thegioididong.com/hoi-dap/ram-ddr4-la-gi-882173#hmenuid1" target="_blank" rel="noopener">DDR4 2 khe (1 khe 8 GB + 1 khe 8 GB)</a></strong></aside>\r\n</li>\r\n<li>\r\n<aside><strong>Tốc độ Bus RAM:<span class="">3200 MHz</span></strong></aside>\r\n<aside></aside>\r\n</li>\r\n<li>\r\n<aside><strong>Hỗ trợ RAM tối đa:<span class="">16 GB</span></strong></aside>\r\n<aside></aside>\r\n</li>\r\n</ul>\r\n</div>',
+    price: 33,
     discountPercentage: 1,
-    stock: 1,
+    stock: 3333,
     thumbnail:
-      "https://res.cloudinary.com/dj6jqey93/image/upload/v1738467159/mlaw02atkmwyajts6zva.png",
+      "https://res.cloudinary.com/dj6jqey93/image/upload/v1745331863/zuufefkrllzj6n9thd5x.png",
     status: "active",
     featured: "0",
     position: 71,
     createdBy: {
       createdAt: {
-        $date: "2025-02-02T03:32:40.440Z",
+        $date: "2025-04-22T14:24:23.691Z",
       },
     },
-    deleted: true,
+    deleted: false,
     updatedBy: [],
     createdAt: {
-      $date: "2025-02-02T03:32:40.444Z",
+      $date: "2025-04-22T14:24:23.692Z",
     },
     updatedAt: {
-      $date: "2025-02-03T02:32:57.448Z",
+      $date: "2025-04-22T14:24:23.692Z",
     },
-    slug: "aa",
+    slug: "laptop-hp-15",
+    __v: 0,
+  },
+  {
+    _id: {
+      $oid: "6807a718c1f4fd7e53e8b904",
+    },
+    title: "Laptop Dell Inspiron 15",
+    product_category_id: "678f66296ab2bf8a3fd8eb03",
+    description:
+      '<div class="box-specifi"><a class="active" data-group-id="32" data-index="1">\r\n<h3>Bộ xử l&yacute;</h3>\r\n</a>\r\n<ul class="text-specifi active">\r\n<li>\r\n<aside><strong>C&ocirc;ng nghệ CPU: <span class=""><a href="https://www.thegioididong.com/hoi-dap/intel-the-he-12-alder-lake-tren-laptop-cau-hinh-va-thoi-1396454" target="_blank" rel="noopener">Intel Core i5 Alder Lake</a>&nbsp;- 1235U</span></strong></aside>\r\n</li>\r\n<li>\r\n<aside><strong>Số nh&acirc;n: <span class="">10</span></strong></aside>\r\n</li>\r\n<li>\r\n<aside><strong>Số luồng:<span class="">12</span></strong></aside>\r\n</li>\r\n<li>\r\n<aside><strong>Tốc độ CPU:<span class="">1.3GHz</span></strong></aside>\r\n</li>\r\n<li>\r\n<aside><strong>Tốc độ tối đa:<a class="tzLink" href="https://www.thegioididong.com/hoi-dap/turbo-boost-la-gi-cai-dat-turbo-boost-nhu-the-nao-884498" target="_blank" rel="noopener">Turbo Boost 4.4 GHz</a></strong></aside>\r\n</li>\r\n</ul>\r\n</div>\r\n<div class="box-specifi"><a class="active" data-group-id="34" data-index="3">\r\n<h3>Bộ nhớ RAM, Ổ cứng</h3>\r\n</a>\r\n<ul class="text-specifi active">\r\n<li>\r\n<aside><strong>RAM: <a class="tzLink" href="https://www.thegioididong.com/hoi-dap/ram-lap-top-la-gi-dung-luong-bao-nhieu-la-du-1172167" target="_blank" rel="noopener">16 GB</a></strong></aside>\r\n</li>\r\n<li>\r\n<aside><strong>Loại RAM:<a class="tzLink" href="https://www.thegioididong.com/hoi-dap/ram-ddr4-la-gi-882173#hmenuid1" target="_blank" rel="noopener">DDR4 2 khe (1 khe 8 GB + 1 khe 8 GB)</a></strong></aside>\r\n</li>\r\n<li>\r\n<aside><strong>Tốc độ Bus RAM:<span class="">2666 MHz</span></strong></aside>\r\n</li>\r\n<li>\r\n<aside><strong>Hỗ trợ RAM tối đa:<span class="">16 GB</span></strong></aside>\r\n</li>\r\n</ul>\r\n</div>',
+    price: 444,
+    discountPercentage: 4,
+    stock: 44,
+    thumbnail:
+      "https://res.cloudinary.com/dj6jqey93/image/upload/v1745331991/cnjoxi4ogmoc0fwktson.png",
+    status: "active",
+    featured: "1",
+    position: 72,
+    createdBy: {
+      createdAt: {
+        $date: "2025-04-22T14:26:32.185Z",
+      },
+    },
+    deleted: false,
+    updatedBy: [],
+    createdAt: {
+      $date: "2025-04-22T14:26:32.186Z",
+    },
+    updatedAt: {
+      $date: "2025-04-22T14:26:32.186Z",
+    },
+    slug: "laptop-dell-inspiron-15",
+    __v: 0,
+  },
+  {
+    _id: {
+      $oid: "6807a77ec1f4fd7e53e8b925",
+    },
+    title: "Laptop Acer Aspire 7",
+    product_category_id: "678f66296ab2bf8a3fd8eb03",
+    description:
+      '<div class="box-specifi"><a class="active" data-group-id="32" data-index="1">\r\n<h3>Bộ xử l&yacute;</h3>\r\n</a>\r\n<ul class="text-specifi active">\r\n<li>\r\n<aside><strong>C&ocirc;ng nghệ CPU:<span class=""><a href="https://www.thegioididong.com/hoi-dap/intel-the-he-12-alder-lake-tren-laptop-cau-hinh-va-thoi-1396454" target="_blank" rel="noopener">Intel Core i5 Alder Lake</a>&nbsp;- 12450H</span></strong></aside>\r\n</li>\r\n<li>\r\n<aside><strong>Số nh&acirc;n:<span class="">8</span></strong></aside>\r\n</li>\r\n<li>\r\n<aside><strong>Số luồng:<span class="">12</span></strong></aside>\r\n</li>\r\n<li>\r\n<aside><strong>Tốc độ CPU:<span class="">2GHz</span></strong></aside>\r\n</li>\r\n<li>\r\n<aside><strong>Tốc độ tối đa:<a class="tzLink" href="https://www.thegioididong.com/hoi-dap/turbo-boost-la-gi-cai-dat-turbo-boost-nhu-the-nao-884498" target="_blank" rel="noopener">Turbo Boost 4.4 GHz</a></strong></aside>\r\n</li>\r\n</ul>\r\n</div>\r\n<div class="box-specifi"><a class="active" data-group-id="34" data-index="3">\r\n<h3>Bộ nhớ RAM, Ổ cứng</h3>\r\n</a>\r\n<ul class="text-specifi active">\r\n<li>\r\n<aside><strong>RAM:<a class="tzLink" href="https://www.thegioididong.com/hoi-dap/ram-lap-top-la-gi-dung-luong-bao-nhieu-la-du-1172167" target="_blank" rel="noopener">16 GB</a></strong></aside>\r\n</li>\r\n<li>\r\n<aside><strong>Loại RAM:<a class="tzLink" href="https://www.thegioididong.com/hoi-dap/ram-ddr4-la-gi-882173#hmenuid1" target="_blank" rel="noopener">DDR4 2 khe (1 khe 8 GB + 1 khe 8 GB)</a></strong></aside>\r\n<aside></aside>\r\n</li>\r\n<li>\r\n<aside><strong>Tốc độ Bus RAM:<span class="">3200 MHz</span></strong></aside>\r\n</li>\r\n<li>\r\n<aside><strong>Hỗ trợ RAM tối đa:<span class="">32 GB</span></strong></aside>\r\n</li>\r\n</ul>\r\n</div>',
+    price: 555,
+    discountPercentage: 5,
+    stock: 55,
+    thumbnail:
+      "https://res.cloudinary.com/dj6jqey93/image/upload/v1745332093/xxbnd1tww62iqpmb5smy.png",
+    status: "active",
+    featured: "0",
+    position: 73,
+    createdBy: {
+      createdAt: {
+        $date: "2025-04-22T14:28:14.248Z",
+      },
+    },
+    deleted: false,
+    updatedBy: [],
+    createdAt: {
+      $date: "2025-04-22T14:28:14.249Z",
+    },
+    updatedAt: {
+      $date: "2025-04-22T14:28:14.249Z",
+    },
+    slug: "laptop-acer-aspire-7",
+    __v: 0,
+  },
+  {
+    _id: {
+      $oid: "6807a7e3c1f4fd7e53e8b946",
+    },
+    title: "Laptop MacBook Air",
+    product_category_id: "678f66296ab2bf8a3fd8eb03",
+    description:
+      '<div class="box-specifi"><a class="active" data-group-id="32" data-index="1">\r\n<h3>Bộ xử l&yacute;</h3>\r\n</a>\r\n<ul class="text-specifi active">\r\n<li>\r\n<aside><strong>C&ocirc;ng nghệ CPU:<span class="">Apple M4 - H&atilde;ng kh&ocirc;ng c&ocirc;ng bố</span></strong></aside>\r\n</li>\r\n<li>\r\n<aside><strong>Số nh&acirc;n:<span class="">10</span></strong></aside>\r\n</li>\r\n<li>\r\n<aside><strong>Số luồng:<span class="">H&atilde;ng kh&ocirc;ng c&ocirc;ng bố</span></strong></aside>\r\n</li>\r\n<li>\r\n<aside><strong>Tốc độ CPU:<span class="">20 GB/s memory bandwidth</span></strong></aside>\r\n</li>\r\n<li>\r\n<aside><strong>Tốc độ tối đa:<span class="">H&atilde;ng kh&ocirc;ng c&ocirc;ng bố</span></strong></aside>\r\n</li>\r\n</ul>\r\n</div>\r\n<div class="box-specifi"><a class="active" data-group-id="34" data-index="3">\r\n<h3>Bộ nhớ RAM, Ổ cứng</h3>\r\n</a>\r\n<ul class="text-specifi active">\r\n<li>\r\n<aside><strong>RAM: <a class="tzLink" href="https://www.thegioididong.com/hoi-dap/ram-lap-top-la-gi-dung-luong-bao-nhieu-la-du-1172167" target="_blank" rel="noopener">16 GB</a></strong></aside>\r\n</li>\r\n<li>\r\n<aside><strong>Loại RAM:<span class="">H&atilde;ng kh&ocirc;ng c&ocirc;ng bố</span></strong></aside>\r\n</li>\r\n<li>\r\n<aside><strong>Tốc độ Bus RAM:<span class="">H&atilde;ng kh&ocirc;ng c&ocirc;ng bố</span></strong></aside>\r\n</li>\r\n<li>\r\n<aside><strong>Hỗ trợ RAM tối đa:<span class="">Kh&ocirc;ng hỗ trợ n&acirc;ng cấp</span></strong></aside>\r\n</li>\r\n</ul>\r\n</div>',
+    price: 666,
+    discountPercentage: 6,
+    stock: 66,
+    thumbnail:
+      "https://res.cloudinary.com/dj6jqey93/image/upload/v1745332194/ebwwgprpxhyd1ddstnfn.png",
+    status: "active",
+    featured: "1",
+    position: 74,
+    createdBy: {
+      createdAt: {
+        $date: "2025-04-22T14:29:55.085Z",
+      },
+    },
+    deleted: false,
+    updatedBy: [],
+    createdAt: {
+      $date: "2025-04-22T14:29:55.086Z",
+    },
+    updatedAt: {
+      $date: "2025-04-22T14:29:55.086Z",
+    },
+    slug: "laptop-macbook-air",
+    __v: 0,
+  },
+  {
+    _id: {
+      $oid: "6807a856c1f4fd7e53e8b967",
+    },
+    title: "Laptop Asus Vivobook ",
+    product_category_id: "678f66296ab2bf8a3fd8eb03",
+    description:
+      '<div class="box-specifi"><a class="active" data-group-id="32" data-index="1">\r\n<h3>Bộ xử l&yacute;</h3>\r\n</a>\r\n<ul class="text-specifi active">\r\n<li>\r\n<aside><strong>C&ocirc;ng nghệ CPU: <span class=""><a href="https://www.thegioididong.com/hoi-dap/intel-the-he-12-alder-lake-tren-laptop-cau-hinh-va-thoi-1396454" target="_blank" rel="noopener">Intel Core i5 Alder Lake</a>&nbsp;- 12500H</span></strong></aside>\r\n</li>\r\n<li>\r\n<aside><strong>Số nh&acirc;n:<span class="">12</span></strong></aside>\r\n</li>\r\n<li>\r\n<aside><strong>Số luồng:<span class="">16</span></strong></aside>\r\n</li>\r\n<li>\r\n<aside><strong>Tốc độ CPU:<span class="">2.5GHz</span></strong></aside>\r\n</li>\r\n<li>\r\n<aside><strong>Tốc độ tối đa:<a class="tzLink" href="https://www.thegioididong.com/hoi-dap/turbo-boost-la-gi-cai-dat-turbo-boost-nhu-the-nao-884498" target="_blank" rel="noopener">Turbo Boost 4.5 GHz</a></strong></aside>\r\n<aside></aside>\r\n</li>\r\n</ul>\r\n</div>\r\n<div class="box-specifi"><a class="active" data-group-id="34" data-index="3">\r\n<h3>Bộ nhớ RAM, Ổ cứng</h3>\r\n</a>\r\n<ul class="text-specifi active">\r\n<li>\r\n<aside><strong>RAM:<a class="tzLink" href="https://www.thegioididong.com/hoi-dap/ram-lap-top-la-gi-dung-luong-bao-nhieu-la-du-1172167" target="_blank" rel="noopener">16 GB</a></strong></aside>\r\n</li>\r\n<li>\r\n<aside><strong>Loại RAM:<a class="tzLink" href="https://www.thegioididong.com/hoi-dap/ram-ddr4-la-gi-882173#hmenuid1" target="_blank" rel="noopener">DDR4 2 khe (8 GB onboard + 1 khe 8 GB)</a></strong></aside>\r\n<aside></aside>\r\n</li>\r\n<li>\r\n<aside><strong>Tốc độ Bus RAM:<span class="">3200 MHz</span></strong></aside>\r\n</li>\r\n<li>\r\n<aside><strong>Hỗ trợ RAM tối đa:<span class="">24 GB</span></strong></aside>\r\n</li>\r\n</ul>\r\n</div>',
+    price: 777,
+    discountPercentage: 7,
+    stock: 777,
+    thumbnail:
+      "https://res.cloudinary.com/dj6jqey93/image/upload/v1745332309/rrsptw03dbhay2igzxxa.png",
+    status: "active",
+    featured: "1",
+    position: 75,
+    createdBy: {
+      createdAt: {
+        $date: "2025-04-22T14:31:50.403Z",
+      },
+    },
+    deleted: false,
+    updatedBy: [],
+    createdAt: {
+      $date: "2025-04-22T14:31:50.403Z",
+    },
+    updatedAt: {
+      $date: "2025-04-22T14:31:50.403Z",
+    },
+    slug: "laptop-asus-vivobook-Rp2bcmX2r",
+    __v: 0,
+  },
+  {
+    _id: {
+      $oid: "6807a8c3c1f4fd7e53e8b9a6",
+    },
+    title: "Laptop Acer Aspire Lite 14",
+    product_category_id: "678f66296ab2bf8a3fd8eb03",
+    description:
+      '<div class="box-specifi"><a class="active" data-group-id="32" data-index="1">\r\n<h3>Bộ xử l&yacute;</h3>\r\n</a>\r\n<ul class="text-specifi active">\r\n<li>\r\n<aside><strong>C&ocirc;ng nghệ CPU:<span class=""><a href="https://www.thegioididong.com/tin-tuc/chip-intel-the-he-12-la-gi-1400953" target="_blank" rel="noopener">Intel Core i3 Alder Lake</a>&nbsp;-&nbsp;<a href="https://www.thegioididong.com/hoi-dap/tim-hieu-chip-intel-core-i3-1215u-chi-tiet-ve-1473649" target="_blank" rel="noopener">1215U</a></span></strong></aside>\r\n</li>\r\n<li>\r\n<aside><strong>Số nh&acirc;n:<span class="">6</span></strong></aside>\r\n</li>\r\n<li>\r\n<aside><strong>Số luồng:<span class="">8</span></strong></aside>\r\n</li>\r\n<li>\r\n<aside><strong>Tốc độ CPU:<span class="">1.2GHz</span></strong></aside>\r\n</li>\r\n<li>\r\n<aside><strong>Tốc độ tối đa:<a class="tzLink" href="https://www.thegioididong.com/hoi-dap/turbo-boost-la-gi-cai-dat-turbo-boost-nhu-the-nao-884498" target="_blank" rel="noopener">Turbo Boost 4.4 GHz</a></strong></aside>\r\n</li>\r\n</ul>\r\n</div>\r\n<div class="box-specifi"><a class="active" data-group-id="34" data-index="3">\r\n<h3>Bộ nhớ RAM, Ổ cứng</h3>\r\n</a>\r\n<ul class="text-specifi active">\r\n<li>\r\n<aside><strong>RAM:<a class="tzLink" href="https://www.thegioididong.com/hoi-dap/ram-lap-top-la-gi-dung-luong-bao-nhieu-la-du-1172167" target="_blank" rel="noopener">8 GB</a></strong></aside>\r\n</li>\r\n<li>\r\n<aside><strong>Loại RAM:<a class="tzLink" href="https://www.thegioididong.com/hoi-dap/ram-ddr5-la-gi-hieu-suat-cai-tien-ra-sao-co-nen-nang-cap-1424201" target="_blank" rel="noopener">DDR5 2 khe (1 khe 8 GB + 1 khe trống)</a></strong></aside>\r\n</li>\r\n<li>\r\n<aside><strong>Tốc độ Bus RAM:<span class="">4800 MHz</span></strong></aside>\r\n</li>\r\n<li>\r\n<aside><strong>Hỗ trợ RAM tối đa:<span class="">16 GB</span></strong></aside>\r\n</li>\r\n</ul>\r\n</div>',
+    price: 8888,
+    discountPercentage: 8,
+    stock: 888,
+    thumbnail:
+      "https://res.cloudinary.com/dj6jqey93/image/upload/v1745332419/bznsdpv3leykfgua1oeh.png",
+    status: "active",
+    featured: "0",
+    position: 76,
+    createdBy: {
+      createdAt: {
+        $date: "2025-04-22T14:33:39.852Z",
+      },
+    },
+    deleted: false,
+    updatedBy: [],
+    createdAt: {
+      $date: "2025-04-22T14:33:39.853Z",
+    },
+    updatedAt: {
+      $date: "2025-04-22T14:33:39.853Z",
+    },
+    slug: "laptop-acer-aspire-lite-14",
+    __v: 0,
+  },
+  {
+    _id: {
+      $oid: "6807a927c1f4fd7e53e8b9c7",
+    },
+    title: "Laptop Asus Vivobook",
+    product_category_id: "678f66296ab2bf8a3fd8eb03",
+    description:
+      '<div class="box-specifi"><a class="active" data-group-id="32" data-index="1">\r\n<h3>Bộ xử l&yacute;</h3>\r\n</a>\r\n<ul class="text-specifi active">\r\n<li>\r\n<aside><strong>C&ocirc;ng nghệ CPU:<span class="">Intel Core i5 Raptor Lake - 13500H</span></strong></aside>\r\n</li>\r\n<li>\r\n<aside><strong>Số nh&acirc;n:<span class="">12</span></strong></aside>\r\n</li>\r\n<li>\r\n<aside><strong>Số luồng:<span class="">16</span></strong></aside>\r\n</li>\r\n<li>\r\n<aside><strong>Tốc độ CPU:<span class="">2.6GHz</span></strong></aside>\r\n</li>\r\n<li>\r\n<aside><strong>Tốc độ tối đa: <a class="tzLink" href="https://www.thegioididong.com/hoi-dap/turbo-boost-la-gi-cai-dat-turbo-boost-nhu-the-nao-884498" target="_blank" rel="noopener">Turbo Boost 4.7 GHz</a></strong></aside>\r\n</li>\r\n</ul>\r\n</div>\r\n<div class="box-specifi"><a class="active" data-group-id="34" data-index="3">\r\n<h3>Bộ nhớ RAM, Ổ cứng</h3>\r\n</a>\r\n<ul class="text-specifi active">\r\n<li>\r\n<aside><strong>RAM:<a class="tzLink" href="https://www.thegioididong.com/hoi-dap/ram-lap-top-la-gi-dung-luong-bao-nhieu-la-du-1172167" target="_blank" rel="noopener">16 GB</a></strong></aside>\r\n</li>\r\n<li>\r\n<aside><strong>Loại RAM:<a class="tzLink" href="https://www.thegioididong.com/hoi-dap/ram-ddr4-la-gi-882173#hmenuid1" target="_blank" rel="noopener">DDR4 2 khe (8 GB onboard + 1 khe 8 GB)</a></strong></aside>\r\n</li>\r\n<li>\r\n<aside><strong>Tốc độ Bus RAM:<span class="">3200 MHz</span></strong></aside>\r\n</li>\r\n<li>\r\n<aside><strong>Hỗ trợ RAM tối đa:<span class="">24 GB</span></strong></aside>\r\n</li>\r\n</ul>\r\n</div>',
+    price: 999,
+    discountPercentage: 9,
+    stock: 99,
+    thumbnail:
+      "https://res.cloudinary.com/dj6jqey93/image/upload/v1745332519/dnsdrnbdoaegmqerpk04.png",
+    status: "active",
+    featured: "0",
+    position: 77,
+    createdBy: {
+      createdAt: {
+        $date: "2025-04-22T14:35:19.873Z",
+      },
+    },
+    deleted: false,
+    updatedBy: [],
+    createdAt: {
+      $date: "2025-04-22T14:35:19.874Z",
+    },
+    updatedAt: {
+      $date: "2025-04-22T14:35:19.874Z",
+    },
+    slug: "laptop-asus-vivobook-Fg2r7DWnk",
     __v: 0,
   },
 ];
