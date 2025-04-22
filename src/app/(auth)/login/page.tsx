@@ -3,7 +3,7 @@
 import React from "react";
 import type { FormProps } from "antd";
 import { Button, Checkbox, Divider, Form, Input } from "antd";
-import "./style.scss";
+import "../style.scss";
 import { FacebookOutlined, GoogleOutlined } from "@ant-design/icons";
 
 type FieldType = {
@@ -23,7 +23,7 @@ const onFinishFailed: FormProps<FieldType>["onFinishFailed"] = (errorInfo) => {
 export default function Login() {
   return (
     <>
-      <div className="w-[400px] bg-[#f3f3f3] mx-auto my-5 rounded-xl container-form flex flex-col items-center pb-3">
+      <div className="w-[400px] bg-[#f3f3f3] mx-auto my-5 rounded-xl container-form-login flex flex-col items-center pb-3 px-5">
         <div className="flex flex-col items-center gap-5 ">
           <h1 className="text-4xl !font-extralight py-3">Đăng nhập</h1>
           <Form
@@ -74,11 +74,11 @@ export default function Login() {
         <div className="text-center text-3xl bg-blend-luminosity">OR</div>
 
         <div className="flex flex-col gap-5 my-3">
-          <div className="flex justify-center items-center gap-2 bg-[#3B5998] p-2 rounded-xl text-amber-50 w-[300px]">
+          <div className="flex justify-center items-center gap-2 bg-[#3B5998] p-2 rounded-xl text-amber-50 w-[300px] cursor-pointer">
             <FacebookOutlined />
             FaceBook
           </div>
-          <div className="flex justify-center items-center gap-2 bg-[#E14B33] p-2 rounded-xl text-amber-50 w-[300px]">
+          <div className="flex justify-center items-center gap-2 bg-[#E14B33] p-2 rounded-xl text-amber-50 w-[300px] cursor-pointer">
             <GoogleOutlined />
             Google
           </div>
