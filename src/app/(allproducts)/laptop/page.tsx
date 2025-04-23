@@ -4,7 +4,6 @@ import Image from "next/image";
 import React, { useCallback, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useSearchParams } from "next/navigation";
-
 import banner_laptop from "@public/banner/banner_laptop.avif"; //- import như này sau khi cấu hình
 import { ProductsType } from "@/dataType/product";
 import { getProductByCategoryId } from "@/api/Products/getProductByCategoryId";
