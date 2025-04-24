@@ -1,45 +1,17 @@
 import { useRouter } from "next/navigation";
 import { categories } from "@/data/product-category/products-category";
 import { convertToTree } from "@/ultils/treeParent";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { Menu, MenuProps } from "antd";
 import "./style.scss";
 import removeEmptyChildren from "@/ultils/removeEmptyChildren";
 import { usePathname } from "next/navigation";
+import { buildSlugMap } from "@/ultils/menuUtils";
 
 export default function HeaderMenu() {
   const router = useRouter();
   const [current, setCurrent] = useState("home");
   const pathname = usePathname();
-
-  const onClick: MenuProps["onClick"] = (e) => {
-    setCurrent(e.key);
-    if (e.key === "home") {
-      router.push("/");
-    } else if (e.key === "news") {
-      router.push("/tin-tuc");
-    } else if (e.key === "contact") {
-      router.push("/lien-he");
-    } else {
-      // Nếu có menu con từ categories
-      const clicked = treeData.find(
-        (item) => item.key === e.keyPath[e.keyPath.length - 1]
-      );
-
-      console.log("clicked: ", clicked);
-
-      let slug: string = "";
-      if (clicked?.children) {// -check xem co children hay khong
-        const clickedChild = clicked.children!.find(
-          (child) => child.key === e.key
-        );
-        slug = clicked.slug + "/" + clickedChild!.slug!;
-      } else {
-        slug = clicked!.slug!;
-      }
-      router.push(`/${slug}?categoryId=${e.key}`);
-    }
-  };
 
   // Chuyển đổi sang tree
   const treeData = convertToTree(categories);
@@ -55,6 +27,26 @@ export default function HeaderMenu() {
   );
 
   treeData.forEach(removeEmptyChildren);
+
+  const slugMap = useMemo(() => buildSlugMap(treeData), [treeData]);
+
+  const onClick: MenuProps["onClick"] = ({ key }) => {
+    setCurrent(key);
+
+    const path = slugMap[key];
+    if (!path) {
+      console.warn("Không tìm thấy đường dẫn cho key", key);
+      return;
+    }
+
+    // Các route đặc biệt không cần query
+    const noQuery = ["/", "/tin-tuc", "/lien-he"];
+    if (noQuery.includes(path)) {
+      router.push(path);
+    } else {
+      router.push(`${path}?categoryId=${key}`);
+    }
+  };
 
   useEffect(() => {
     if (pathname.length > 0) {
