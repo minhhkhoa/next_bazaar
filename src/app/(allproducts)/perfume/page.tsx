@@ -1,5 +1,19 @@
-import React from 'react'
+"use client";
+
+import ListProducts from "@/components/ListProducts/ListProducts";
+import { useSearchParams } from "next/navigation";
+import banner_perfume from "@public/banner/banner_pefume.webp";
+import React from "react";
 
 export default function Perfume() {
-  return <div>Perfume</div>;
+  const searchParams = useSearchParams();
+  const categoryId = searchParams.get("categoryId");
+  return (
+    <>
+      <ListProducts
+        categoryId={categoryId ?? ""}
+        banner={banner_perfume.src ?? ""}
+      />
+    </>
+  );
 }

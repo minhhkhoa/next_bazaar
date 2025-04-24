@@ -17,6 +17,17 @@
     transition: background-color 0.3s ease, border-radius 0.3s ease;
   }
 
+  .ant-menu-submenu-selected {
+    background-color: antiquewhite !important;
+    border-radius: 20px !important;
+    transition: background-color 0.3s ease, border-radius 0.3s ease;
+  }
+
+  .ant-menu-item-selected .ant-menu-title-content,
+  .ant-menu-submenu-selected .ant-menu-title-content {
+    color: #05310e !important;
+  }
+
   .ant-menu-item-selected .ant-menu-title-content {
     color: #05310e !important;
   }

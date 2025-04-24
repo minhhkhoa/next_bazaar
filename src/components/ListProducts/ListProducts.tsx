@@ -29,6 +29,8 @@ export default function ListProducts({
     fetchData();
   }, [fetchData]);
 
+  console.log("dât: ", data);
+
   return (
     <>
       {/* Banner */}
@@ -71,7 +73,7 @@ export default function ListProducts({
                 className="bg-white rounded-xl overflow-hidden shadow hover:shadow-lg transition-all duration-300 cursor-pointer w-full max-w-[320px] flex flex-col items-center gap-3 p-4 hover:scale-[1.03]"
               >
                 <Image
-                  src={item.thumbnail}
+                  src={item?.thumbnail}
                   alt={item.title}
                   width={0}
                   height={0}
