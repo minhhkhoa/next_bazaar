@@ -20,30 +20,21 @@ import { useState } from "react";
 import removeEmptyChildren from "@/ultils/removeEmptyChildren";
 import { useRouter } from "next/navigation";
 
-
 const items: MenuProps["items"] = [
   {
     key: "1",
-    label: (
-      <Link href="/login">
-        Đăng nhập
-      </Link>
-    ),
+    label: <Link href="/login">Đăng nhập</Link>,
   },
   {
     key: "2",
-    label: (
-      <Link href="/register">
-        Đăng ký
-      </Link>
-    ),
+    label: <Link href="/register">Đăng ký</Link>,
   },
 ];
 
 export default function Header() {
-    const router = useRouter();
-    const [openDrawer, setOpenDrawer] = useState(false);
-  
+  const router = useRouter();
+  const [openDrawer, setOpenDrawer] = useState(false);
+
   const treeData = convertToTree(categories);
   treeData.forEach(removeEmptyChildren);
 
@@ -57,23 +48,33 @@ export default function Header() {
     { key: "contact", label: "Liên hệ", slug: "lien-he" }
   );
 
-    const onClick: MenuProps["onClick"] = (e) => {
-      if (e.key === "home") {
-        router.push("/");
-      } else if (e.key === "news") {
-        router.push("/tin-tuc");
-      } else if (e.key === "contact") {
-        router.push("/lien-he");
+  const onClick: MenuProps["onClick"] = (e) => {
+    if (e.key === "home") {
+      router.push("/");
+    } else if (e.key === "news") {
+      router.push("/tin-tuc");
+    } else if (e.key === "contact") {
+      router.push("/lien-he");
+    } else {
+      // Nếu có menu con từ categories
+      const clicked = treeData.find(
+        (item) => item.key === e.keyPath[e.keyPath.length - 1]
+      );
+
+      let slug: string = "";
+      if (clicked?.children) {
+        // -check xem co children hay khong
+        const clickedChild = clicked.children!.find(
+          (child) => child.key === e.key
+        );
+        slug = clicked.slug + "/" + clickedChild!.slug!;
       } else {
-        // Nếu có menu con từ categories
-        const clicked = treeData.find((item) => item.key === e.key);
-        if (clicked && clicked.slug) {
-          router.push(`/${clicked.slug}`);
-        }
+        slug = clicked!.slug!;
       }
-      setOpenDrawer(false);
-    };
-  
+      router.push(`/${slug}?categoryId=${e.key}`);
+    }
+    setOpenDrawer(false);
+  };
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [placement, setPlacement] = useState<DrawerProps["placement"]>("left");

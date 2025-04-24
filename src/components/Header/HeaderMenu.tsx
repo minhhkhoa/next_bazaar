@@ -23,11 +23,21 @@ export default function HeaderMenu() {
     } else {
       // Nếu có menu con từ categories
       const clicked = treeData.find(
-        (item) => item.key === e.keyPath[(e.keyPath.length) - 1] //- chỗ này chưa ổn đâu sẽ làm lại sau
+        (item) => item.key === e.keyPath[e.keyPath.length - 1]
       );
-      if (clicked && clicked.slug) {
-        router.push(`/${clicked.slug}?categoryId=${e.key}`);
+
+      console.log("clicked: ", clicked);
+
+      let slug: string = "";
+      if (clicked?.children) {// -check xem co children hay khong
+        const clickedChild = clicked.children!.find(
+          (child) => child.key === e.key
+        );
+        slug = clicked.slug + "/" + clickedChild!.slug!;
+      } else {
+        slug = clicked!.slug!;
       }
+      router.push(`/${slug}?categoryId=${e.key}`);
     }
   };
 

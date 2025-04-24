@@ -29,8 +29,6 @@ export default function ListProducts({
     fetchData();
   }, [fetchData]);
 
-  console.log("dât: ", data);
-
   return (
     <>
       {/* Banner */}
