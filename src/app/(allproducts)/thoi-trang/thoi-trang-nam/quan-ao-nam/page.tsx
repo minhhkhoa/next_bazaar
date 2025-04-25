@@ -1,6 +1,6 @@
 "use client";
 
-import ListProducts from "@/components/ListProducts/ListProducts";
+import ListProducts from "@/components/Products/ListProducts";
 import { useSearchParams } from "next/navigation";
 import banner_clothes_man from "@public/banner/banner_quanaonam.jpg";
 import React from "react";

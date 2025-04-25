@@ -4,8 +4,10 @@ import Image from "next/image";
 import React, { useCallback, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { ProductsType } from "@/dataType/product";
-import { getProductByCategoryId } from "@/api/Products/getProductByCategoryId";
+import { getProductsByCategoryId } from "@/api/Products/getProductByCategoryId";
 import { Col, Row } from "antd";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function ListProducts({
   banner,
@@ -14,11 +16,12 @@ export default function ListProducts({
   banner: string;
   categoryId: string;
 }) {
+  const path = usePathname();
   const [data, setData] = useState<ProductsType[] | undefined>([]);
 
   const fetchData = useCallback(async () => {
     try {
-      const dataProducts = await getProductByCategoryId(categoryId ?? "");
+      const dataProducts = await getProductsByCategoryId(categoryId ?? "");
       setData(dataProducts);
     } catch (error) {
       console.warn("Error:", error);
@@ -28,6 +31,7 @@ export default function ListProducts({
   useEffect(() => {
     fetchData();
   }, [fetchData]);
+
 
   return (
     <>
@@ -64,27 +68,29 @@ export default function ListProducts({
               lg={6}
               className="flex justify-center"
             >
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: index * 0.05 }}
-                className="bg-white rounded-xl overflow-hidden shadow hover:shadow-lg transition-all duration-300 cursor-pointer w-full max-w-[320px] flex flex-col items-center gap-3 p-4 hover:scale-[1.03]"
-              >
-                <Image
-                  src={item?.thumbnail}
-                  alt={item.title}
-                  width={0}
-                  height={0}
-                  sizes="100vw"
-                  className="w-full h-[150px] md:h-[220px] object-contain"
-                />
-                <div className="text-lg font-semibold text-center line-clamp-2">
-                  {item.title}
-                </div>
-                <div className="text-orange-600 text-base font-bold">
-                  {item.price}$
-                </div>
-              </motion.div>
+              <Link href={`${path}/${item.slug}?categoryId=${categoryId}`}>
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: index * 0.05 }}
+                  className="bg-white rounded-xl overflow-hidden shadow hover:shadow-lg transition-all duration-300 cursor-pointer w-full max-w-[320px] flex flex-col items-center gap-3 p-4 hover:scale-[1.03]"
+                >
+                  <Image
+                    src={item?.thumbnail}
+                    alt={item.title}
+                    width={0}
+                    height={0}
+                    sizes="100vw"
+                    className="w-full h-[150px] md:h-[220px] object-contain"
+                  />
+                  <div className="text-lg font-semibold text-center line-clamp-2">
+                    {item.title}
+                  </div>
+                  <div className="text-orange-600 text-base font-bold">
+                    {item.price}$
+                  </div>
+                </motion.div>
+              </Link>
             </Col>
           ))}
         </Row>

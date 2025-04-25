@@ -1,6 +1,6 @@
 "use client";
 
-import ListProducts from "@/components/ListProducts/ListProducts";
+import ListProducts from "@/components/Products/ListProducts";
 import { useSearchParams } from "next/navigation";
 import banner_samsung from "@public/banner//banner_ss.jpg";
 import React from "react";

@@ -1,6 +1,6 @@
 "use client";
 
-import ListProducts from "@/components/ListProducts/ListProducts";
+import ListProducts from "@/components/Products/ListProducts";
 import { useSearchParams } from "next/navigation";
 import banner_perfume from "@public/banner/banner_pefume.webp";
 import React from "react";
