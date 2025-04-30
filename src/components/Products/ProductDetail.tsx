@@ -5,23 +5,15 @@ import {
 import { ProductsType } from "@/dataType/product";
 import { newPrice } from "@/ultils/newPrice";
 import { PlusCircleFilled } from "@ant-design/icons";
-import { Button, Carousel, Col, Divider, Rate, Row } from "antd";
+import { Button, Col, Divider, Rate, Row } from "antd";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import React, { useCallback, useEffect, useState } from "react";
+import SwiperCustomize from "../Swiper/Swiper";
 
 type mixProductType = {
   productDetail: ProductsType[];
   producsCategory: ProductsType[];
-};
-
-const contentStyle: React.CSSProperties = {
-  margin: 0,
-  height: "160px",
-  color: "#fff",
-  lineHeight: "160px",
-  textAlign: "center",
-  background: "#364d79",
 };
 
 export default function ProductDetail({
@@ -56,8 +48,6 @@ export default function ProductDetail({
       console.warn("Error:", error);
     }
   }, [slug, categoryId]);
-
-  console.log("mixProducts", mixProducts);
 
   useEffect(() => {
     fetchData();
@@ -285,15 +275,8 @@ export default function ProductDetail({
       </div>
 
       <Divider />
-
-      <div className="w-full">
-        <Carousel arrows infinite={false}>
-          {mixProducts?.producsCategory.map((item, index) => (
-            <div key={index} style={contentStyle}>
-              {index}
-            </div>
-          ))}
-        </Carousel>
+      <div className="lg:!px-25">
+        {mixProducts && <SwiperCustomize data={mixProducts.producsCategory} />}
       </div>
     </>
   );
