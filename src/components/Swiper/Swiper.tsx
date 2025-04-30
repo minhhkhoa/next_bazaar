@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
@@ -5,8 +7,14 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { ProductsType } from "@/dataType/product";
 import Image from "next/image";
+import { usePathname, useSearchParams } from "next/navigation";
+import Link from "next/link";
 
 export default function SwiperCustomize({ data }: { data: ProductsType[] }) {
+  const path = usePathname().split("/")[1];
+  const categoryId = useSearchParams().get("categoryId");
+
+  console.log("path: ", path);
   return (
     <Swiper
       modules={[Navigation]}
@@ -20,7 +28,10 @@ export default function SwiperCustomize({ data }: { data: ProductsType[] }) {
     >
       {data.map((item: ProductsType, index: number) => (
         <SwiperSlide key={index}>
-          <div className="flex flex-col items-center">
+          <Link
+            href={`/${path}/${item.slug}?categoryId=${categoryId}`}
+            className="flex flex-col items-center"
+          >
             <Image
               src={item.thumbnail}
               alt="Alena"
@@ -31,7 +42,7 @@ export default function SwiperCustomize({ data }: { data: ProductsType[] }) {
               priority
             />
             <div className="text-center">{item.title}</div>
-          </div>
+          </Link>
         </SwiperSlide>
       ))}
     </Swiper>

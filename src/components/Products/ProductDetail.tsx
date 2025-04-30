@@ -275,8 +275,8 @@ export default function ProductDetail({
       </div>
 
       <Divider />
-      <div className="lg:!px-25">
-        {mixProducts && <SwiperCustomize data={mixProducts.producsCategory} />}
+      <div className="lg:!px-25 mb-10">
+        {mixProducts && <SwiperCustomize data={mixProducts.producsCategory.filter((item) => item._id.$oid !== mixProducts.productDetail[0]._id.$oid)} />}
       </div>
     </>
   );
