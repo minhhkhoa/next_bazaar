@@ -11,7 +11,9 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 
 export default function SwiperCustomize({ data }: { data: ProductsType[] }) {
-  const path = usePathname().split("/")[1];
+  const path = usePathname();
+  const trimmedPath = path.replace(/\/[^\/]*$/, "");
+  console.log("trimmedPath: ", trimmedPath);
 
   return (
     <Swiper
@@ -27,7 +29,7 @@ export default function SwiperCustomize({ data }: { data: ProductsType[] }) {
       {data.map((item: ProductsType, index: number) => (
         <SwiperSlide key={index}>
           <Link
-            href={`/${path}/${item.slug}`}
+            href={`${trimmedPath}/${item.slug}`}
             className="flex flex-col items-center"
           >
             <Image

@@ -1,13 +1,16 @@
 "use client";
 
 import ListProducts from "@/components/Products/ListProducts";
-import { useSearchParams } from "next/navigation";
 import banner_samsung from "@public/banner//banner_ss.jpg";
 import React from "react";
+import { useSelector } from "react-redux";
+import { RootState } from "@/redux/store";
 
 export default function Samsung() {
-  const searchParams = useSearchParams();
-  const categoryId = searchParams.get("categoryId");
+  const categoryId = useSelector(
+    (state: RootState) => state.products.selectedCategoryId
+  );
+
   return (
     <>
       <ListProducts

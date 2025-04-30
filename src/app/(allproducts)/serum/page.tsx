@@ -1,13 +1,16 @@
 "use client";
 
 import ListProducts from "@/components/Products/ListProducts";
-import { useSearchParams } from "next/navigation";
 import banner_serum from "@public/banner/banner_serum.avif";
 import React from "react";
+import { RootState } from "@/redux/store";
+import { useSelector } from "react-redux";
 
 export default function Serum() {
-  const searchParams = useSearchParams();
-  const categoryId = searchParams.get("categoryId");
+  const categoryId = useSelector(
+    (state: RootState) => state.products.selectedCategoryId
+  );
+
   return (
     <>
       <ListProducts

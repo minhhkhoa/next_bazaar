@@ -1,13 +1,16 @@
 "use client";
 
 import ListProducts from "@/components/Products/ListProducts";
-import { useSearchParams } from "next/navigation";
 import banner_clothes_man from "@public/banner/banner_quanaonam.jpg";
 import React from "react";
+import { RootState } from "@/redux/store";
+import { useSelector } from "react-redux";
 
 export default function ClothesMan() {
-  const searchParams = useSearchParams();
-  const categoryId = searchParams.get("categoryId");
+  const categoryId = useSelector(
+    (state: RootState) => state.products.selectedCategoryId
+  );
+  
   return (
     <>
       <ListProducts
