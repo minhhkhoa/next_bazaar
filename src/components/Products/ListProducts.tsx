@@ -68,7 +68,7 @@ export default function ListProducts({
               lg={6}
               className="flex justify-center"
             >
-              <Link href={`${path}/${item.slug}?categoryId=${categoryId}`}>
+              <Link href={`${path}/${item.slug}`}>
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}

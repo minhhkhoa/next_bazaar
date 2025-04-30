@@ -49,32 +49,6 @@ export default function Header() {
     { key: "contact", label: "Liên hệ", slug: "lien-he" }
   );
 
-  // const onClick: MenuProps["onClick"] = (e) => {
-  //   if (e.key === "home") {
-  //     router.push("/");
-  //   } else if (e.key === "news") {
-  //     router.push("/tin-tuc");
-  //   } else if (e.key === "contact") {
-  //     router.push("/lien-he");
-  //   } else {
-  //     // Nếu có menu con từ categories
-  //     const clicked = treeData.find(
-  //       (item) => item.key === e.keyPath[e.keyPath.length - 1]
-  //     );
-
-  //     let slug: string = "";
-  //     if (clicked?.children) {
-  //       // -check xem co children hay khong
-  //       const clickedChild = clicked.children!.find(
-  //         (child) => child.key === e.key
-  //       );
-  //       slug = clicked.slug + "/" + clickedChild!.slug!;
-  //     } else {
-  //       slug = clicked!.slug!;
-  //     }
-  //     router.push(`/${slug}?categoryId=${e.key}`);
-  //   }
-  // };
 
   const slugMap = useMemo(() => buildSlugMap(treeData), [treeData]);
 

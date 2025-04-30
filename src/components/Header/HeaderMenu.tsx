@@ -7,8 +7,11 @@ import "./style.scss";
 import removeEmptyChildren from "@/ultils/removeEmptyChildren";
 import { usePathname } from "next/navigation";
 import { buildSlugMap } from "@/ultils/menuUtils";
+import { useDispatch } from "react-redux";
+import { setCategory } from "@/redux/features/productSlice";
 
 export default function HeaderMenu() {
+  const dispatch = useDispatch();
   const router = useRouter();
   const [current, setCurrent] = useState("home");
   const pathname = usePathname();
@@ -44,7 +47,8 @@ export default function HeaderMenu() {
     if (noQuery.includes(path)) {
       router.push(path);
     } else {
-      router.push(`${path}?categoryId=${key}`);
+      router.push(`${path}`);
+      dispatch(setCategory(key));
     }
   };
 

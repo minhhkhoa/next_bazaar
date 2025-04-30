@@ -11,7 +11,7 @@ const initialState: ProductState = {
 };
 
 const productSlice = createSlice({
-  name: "product",
+  name: "products",
   initialState,
   reducers: {
     setCategory(state, action: PayloadAction<string>) {

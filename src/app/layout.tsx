@@ -34,12 +34,14 @@ export default function RootLayout({
       >
         <ScrollToTop />
 
-        <header>
-          <Header />
-        </header>
-
         {/* bọc children với Providers */}
-        <Providers>{children}</Providers>
+        <Providers>
+          <header>
+            <Header />
+          </header>
+
+          {children}
+        </Providers>
 
         <BackTopButton />
         <footer>

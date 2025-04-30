@@ -7,14 +7,12 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { ProductsType } from "@/dataType/product";
 import Image from "next/image";
-import { usePathname, useSearchParams } from "next/navigation";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 
 export default function SwiperCustomize({ data }: { data: ProductsType[] }) {
   const path = usePathname().split("/")[1];
-  const categoryId = useSearchParams().get("categoryId");
 
-  console.log("path: ", path);
   return (
     <Swiper
       modules={[Navigation]}
@@ -29,7 +27,7 @@ export default function SwiperCustomize({ data }: { data: ProductsType[] }) {
       {data.map((item: ProductsType, index: number) => (
         <SwiperSlide key={index}>
           <Link
-            href={`/${path}/${item.slug}?categoryId=${categoryId}`}
+            href={`/${path}/${item.slug}`}
             className="flex flex-col items-center"
           >
             <Image
