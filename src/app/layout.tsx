@@ -5,6 +5,7 @@ import Footer from "@/components/Footer/Footer";
 import "./globals.css";
 import ScrollToTop from "@/hook/Scroll/ScrollToTop";
 import BackTopButton from "@/components/BackTop/BackTopButton";
+import { Providers } from "./providers";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -37,9 +38,10 @@ export default function RootLayout({
           <Header />
         </header>
 
-        {children}
+        {/* bọc children với Providers */}
+        <Providers>{children}</Providers>
 
-        <BackTopButton/>
+        <BackTopButton />
         <footer>
           <Footer />
         </footer>
