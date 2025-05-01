@@ -8,6 +8,7 @@ import { getProductsByCategoryId } from "@/api/Products/getProductByCategoryId";
 import { Col, Row } from "antd";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { newPrice } from "@/ultils/newPrice";
 
 export default function ListProducts({
   banner,
@@ -87,7 +88,7 @@ export default function ListProducts({
                     {item.title}
                   </div>
                   <div className="text-orange-600 text-base font-bold">
-                    {item.price}$
+                    {newPrice(item.price, item.discountPercentage)}$
                   </div>
                 </motion.div>
               </Link>

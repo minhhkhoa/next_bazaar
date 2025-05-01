@@ -4,7 +4,7 @@ import {
 } from "@/api/Products/getProductByCategoryId";
 import { ProductsType } from "@/dataType/product";
 import { newPrice } from "@/ultils/newPrice";
-import { PlusCircleFilled } from "@ant-design/icons";
+import { MinusCircleFilled, PlusCircleFilled } from "@ant-design/icons";
 import { Button, Col, Divider, Rate, Row } from "antd";
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -53,6 +53,7 @@ export default function ProductDetail({
     fetchData();
   }, [fetchData]);
 
+  const newLocal = <PlusCircleFilled style={{ color: "#fe9614" }} />;
   return (
     <>
       <div className="flex flex-col py-5 px-5">
@@ -142,10 +143,10 @@ export default function ProductDetail({
 
               {/* khối input số lượng */}
               <div>
-                <p>Số lượng</p>
+                <p className="font-medium mb-3 text-xl">Số lượng</p>
                 <div className="flex gap-3">
                   <button
-                    className={`border-2 w-[50px] h-[50px] rounded-lg ${
+                    className={`active:bg-yellow-200 font-bold text-2xl border-2 w-[50px] h-[50px] rounded-lg ${
                       number === 0 && "hover:cursor-not-allowed"
                     }`}
                     onClick={() => {
@@ -165,7 +166,7 @@ export default function ProductDetail({
                     readOnly
                   />
                   <button
-                    className={`border-2 w-[50px] h-[50px] rounded-lg ${
+                    className={`active:bg-blue-300 font-bold text-xl border-2 w-[50px] h-[50px] rounded-lg ${
                       number === mixProducts?.productDetail[0].stock &&
                       "hover:cursor-not-allowed"
                     }`}
@@ -216,7 +217,11 @@ export default function ProductDetail({
                     });
                   }}
                 >
-                  <PlusCircleFilled />
+                  {checkClick.infoDetail ? (
+                    <MinusCircleFilled style={{ color: "#fe9614" }} />
+                  ) : (
+                    <PlusCircleFilled style={{ color: "#fe9614" }} />
+                  )}
                 </p>
               </div>
               {checkClick.infoDetail && mixProducts && (
@@ -228,6 +233,7 @@ export default function ProductDetail({
                 ></div>
               )}
             </div>
+
             <div>
               <div className="flex justify-between items-center">
                 <p className="text-2xl">Chất liệu</p>
@@ -240,7 +246,11 @@ export default function ProductDetail({
                     });
                   }}
                 >
-                  <PlusCircleFilled />
+                  {checkClick.material ? (
+                    <MinusCircleFilled style={{ color: "#fe9614" }} />
+                  ) : (
+                    <PlusCircleFilled style={{ color: "#fe9614" }} />
+                  )}
                 </p>
               </div>
               {checkClick.material && mixProducts && (
@@ -249,6 +259,7 @@ export default function ProductDetail({
                 </div>
               )}
             </div>
+
             <div>
               <div className="flex justify-between items-center">
                 <p className="text-2xl">Đánh giá sản phẩm</p>
@@ -261,7 +272,11 @@ export default function ProductDetail({
                     });
                   }}
                 >
-                  <PlusCircleFilled />
+                  {checkClick.evaluate ? (
+                    <MinusCircleFilled style={{ color: "#fe9614" }} />
+                  ) : (
+                    <PlusCircleFilled style={{ color: "#fe9614" }} />
+                  )}
                 </p>
               </div>
               {checkClick.evaluate && mixProducts && (
@@ -275,8 +290,18 @@ export default function ProductDetail({
       </div>
 
       <Divider />
+
       <div className="lg:!px-25 mb-10">
-        {mixProducts && <SwiperCustomize data={mixProducts.producsCategory.filter((item) => item._id.$oid !== mixProducts.productDetail[0]._id.$oid)} />}
+        <div className="text-2xl font-bold mb-5 text-[#05310e] px-5">
+          Các sản phẩm liên quan
+        </div>
+        {mixProducts && (
+          <SwiperCustomize
+            data={mixProducts.producsCategory.filter(
+              (item) => item._id.$oid !== mixProducts.productDetail[0]._id.$oid
+            )}
+          />
+        )}
       </div>
     </>
   );

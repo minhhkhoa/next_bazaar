@@ -17,14 +17,15 @@ export default function SwiperCustomize({ data }: { data: ProductsType[] }) {
 
   return (
     <Swiper
-      modules={[Navigation]}
+      modules={[Navigation]} //- cái này để chuyển slide
       navigation
       spaceBetween={20}
       breakpoints={{
-        320: { slidesPerView: 1 },
+        320: { slidesPerView: 2 },
         768: { slidesPerView: 2 },
         1024: { slidesPerView: 4 },
       }}
+      className="mySwiper"
     >
       {data.map((item: ProductsType, index: number) => (
         <SwiperSlide key={index}>
@@ -34,11 +35,18 @@ export default function SwiperCustomize({ data }: { data: ProductsType[] }) {
           >
             <Image
               src={item.thumbnail}
-              alt="Alena"
+              alt={item.title}
               width={0}
               height={0}
               sizes="100vw"
-              className="object-fill w-[200px] h-[200px] md:h-[200px] lg:h-[150px]"
+              className={`
+                object-fill
+                w-[120px] h-[120px]
+                sm:w-[120px] sm:h-[120px]
+                md:w-[180px] md:h-[180px]
+                lg:w-[200px] lg:h-[200px]
+                xl:w-[220px] xl:h-[220px]
+              `}
               priority
             />
             <div className="text-center">{item.title}</div>

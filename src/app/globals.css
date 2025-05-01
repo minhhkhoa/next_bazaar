@@ -6,3 +6,15 @@ body {
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.swiper-slide {
+  margin-right: 5px !important;
+}
+
+.swiper-button-prev {
+  display: none !important;
+}
+
+.swiper-button-next {
+  display: none !important;
+}
