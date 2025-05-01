@@ -36,7 +36,7 @@ export default function FeaturedNews() {
                   className="w-[100px] h-auto object-contain rounded-[16px]"
                 />
 
-                <div>{item.title}</div>
+                <div className="font-medium">{item.title}</div>
               </div>
 
               {index !==

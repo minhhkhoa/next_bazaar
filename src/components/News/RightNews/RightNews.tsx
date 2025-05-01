@@ -10,6 +10,8 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import React from "react";
+import { useDispatch } from "react-redux";
+import { setNewsId } from "@/redux/features/newsSlice";
 
 export default function RightNews({
   News,
@@ -18,6 +20,8 @@ export default function RightNews({
   News: NewsType[];
 }) {
   const router = useRouter();
+  const dispatch = useDispatch();
+
 
   return (
     <>
@@ -29,7 +33,11 @@ export default function RightNews({
             const { content } = item;
             return (
               <Col
-                onClick={() => router.push(`/tin-tuc/${item.id}`)}
+                onClick={() => {
+                  router.push(`/tin-tuc/${item.id}`);
+                  const id = item.id as string;
+                  dispatch(setNewsId(id));
+                }}
                 key={item.id}
                 xs={24}
                 md={12}
@@ -49,6 +57,7 @@ export default function RightNews({
                       height="0"
                       sizes="100vw"
                       className=" w-full h-auto object-contain rounded-2xl"
+                      priority
                     />
                   </div>
                   <div className="font-bold text-2xl">{item.title}</div>

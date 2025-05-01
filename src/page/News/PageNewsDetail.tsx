@@ -6,20 +6,23 @@ import NewsCategories from "@/components/News/LeftNews/NewsCategories";
 import RightNewsDetail from "@/components/News/RightNews/RightNewsDetail";
 import { NewsType } from "@/dataType/new";
 import useWindowSize from "@/hook/WindowSize/useWindowSize";
+import { RootState } from "@/redux/store";
 import React, { useCallback, useEffect } from "react";
+import { useSelector } from "react-redux";
 
-export default function PageNewsDetail({ id }: { id: string }) {
+export default function PageNewsDetail() {
   const [newsDetail, setNewsDetail] = React.useState<NewsType | undefined>();
   const { width } = useWindowSize();
 
+  const newsId = useSelector((state: RootState) => state.news.newsId) as string;
   const fetchData = useCallback(async () => {
     try {
-      const data = await getDetailNews(id);
+      const data = await getDetailNews(newsId ?? "");
       setNewsDetail(data);
     } catch (error) {
       console.warn("Error:", error);
     }
-  }, [id]);
+  }, [newsId]);
 
   useEffect(() => {
     fetchData();
