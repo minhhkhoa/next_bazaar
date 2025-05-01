@@ -53,7 +53,6 @@ export default function ProductDetail({
     fetchData();
   }, [fetchData]);
 
-  const newLocal = <PlusCircleFilled style={{ color: "#fe9614" }} />;
   return (
     <>
       <div className="flex flex-col py-5 px-5">
