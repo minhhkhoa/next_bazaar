@@ -20,6 +20,8 @@ import { useMemo, useState } from "react";
 import removeEmptyChildren from "@/ultils/removeEmptyChildren";
 import { useRouter } from "next/navigation";
 import { buildSlugMap } from "@/ultils/menuUtils";
+import { useDispatch } from "react-redux";
+import { setCategory } from "@/redux/features/productSlice";
 
 const items: MenuProps["items"] = [
   {
@@ -33,6 +35,7 @@ const items: MenuProps["items"] = [
 ];
 
 export default function Header() {
+  const dispatch = useDispatch();
   const router = useRouter();
   const [openDrawer, setOpenDrawer] = useState(false);
 
@@ -64,7 +67,8 @@ export default function Header() {
     if (noQuery.includes(path)) {
       router.push(path);
     } else {
-      router.push(`${path}?categoryId=${key}`);
+      router.push(`${path}`);
+      dispatch(setCategory(key));
     }
     setOpenDrawer(false);
   };
