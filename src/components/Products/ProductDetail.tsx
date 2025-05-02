@@ -53,6 +53,17 @@ export default function ProductDetail({
     fetchData();
   }, [fetchData]);
 
+  const newData = mixProducts?.producsCategory.filter(
+    (item) => item._id.$oid !== mixProducts.productDetail[0]._id.$oid
+  ).map((item) => {
+    return {
+      id: item._id.$oid,
+      title: item.title,
+      thumbnail: item.thumbnail,
+      slug: item.slug,
+    };
+  });
+
   return (
     <>
       <div className="flex flex-col py-5 px-5">
@@ -294,13 +305,7 @@ export default function ProductDetail({
         <div className="text-2xl font-bold mb-5 text-[#05310e] px-5">
           Các sản phẩm liên quan
         </div>
-        {mixProducts && (
-          <SwiperCustomize
-            data={mixProducts.producsCategory.filter(
-              (item) => item._id.$oid !== mixProducts.productDetail[0]._id.$oid
-            )}
-          />
-        )}
+        {mixProducts && <SwiperCustomize data={newData ?? []} />}
       </div>
     </>
   );

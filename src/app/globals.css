@@ -54,6 +54,18 @@ body {
   border-radius: 16px;
 }
 
+.slick-next {
+  color: rgb(255, 0, 0) !important;
+}
+
+.slick-prev {
+  color: rgb(255, 0, 0) !important;
+}
+
+.slick-dots-bottom li {
+  background-color: black !important;
+}
+
 @media screen and (max-width: 768px) {
   .mySwiperContact .swiper-slide {
     width: 150px !important;

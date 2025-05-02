@@ -167,7 +167,6 @@ export default function Header() {
           </div>
         </div>
       </div>
-      {console.log(patchname)}
       {(width ?? 0) <= 768 &&
         patchname !== "/login" &&
         patchname !== "/lien-he" &&

@@ -5,12 +5,22 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
-import { ProductsType } from "@/dataType/product";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 
-export default function SwiperCustomize({ data }: { data: ProductsType[] }) {
+export interface SwiperProps {
+  id: string;
+  title?: string;
+  thumbnail: string;
+  slug?: string;
+}
+
+export interface SwiperCustomizeProps {
+  data: SwiperProps[];
+}
+
+export default function SwiperCustomize({ data }: SwiperCustomizeProps) {
   const path = usePathname();
   const trimmedPath = path.replace(/\/[^\/]*$/, "");
 
@@ -26,7 +36,7 @@ export default function SwiperCustomize({ data }: { data: ProductsType[] }) {
       }}
       className="mySwiper"
     >
-      {data.map((item: ProductsType, index: number) => (
+      {data.map((item: SwiperProps, index: number) => (
         <SwiperSlide key={index}>
           <Link
             href={`${trimmedPath}/${item.slug}`}
@@ -34,7 +44,7 @@ export default function SwiperCustomize({ data }: { data: ProductsType[] }) {
           >
             <Image
               src={item.thumbnail}
-              alt={item.title}
+              alt={item.title as string}
               width={0}
               height={0}
               sizes="100vw"
