@@ -17,7 +17,7 @@ const CarouselCustom: React.FC<SwiperCustomizeProps> = ({
             alt="Athena"
             width={0}
             height={0}
-            className="w-full object-cover h-[400px] rounded-2xl"
+            className="w-full h-[160px] md:h-[300px] lg:h-[400px] object-cover rounded-2xl"
             sizes="100vw"
             priority
           />

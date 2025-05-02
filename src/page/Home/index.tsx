@@ -4,6 +4,7 @@ import banner_iphone from "@public/banner/banner_ip.webp";
 import banner_samsung from "@public/banner//banner_ss.jpg";
 import banner_serum from "@public/banner/banner_serum.avif";
 import banner_fashion_woman from "@public/banner/banner_thoitrangnu.jpg";
+import Ballpit from "./components/Ballpit/Ballpit";
 
 
 
@@ -32,6 +33,10 @@ export default function PageHome() {
         <CarouselCustom data={dataCarousel ?? []} />
       </div>
       PageHome
+
+      <div className="h-[150px] md:h-[300px] mx-auto">
+        <Ballpit/>
+      </div>
     </div>
   );
 }
