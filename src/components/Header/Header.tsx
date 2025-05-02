@@ -18,7 +18,7 @@ import { categories } from "@/data/product-category/products-category";
 import { convertToTree } from "@/ultils/treeParent";
 import { useMemo, useState } from "react";
 import removeEmptyChildren from "@/ultils/removeEmptyChildren";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { buildSlugMap } from "@/ultils/menuUtils";
 import { useDispatch } from "react-redux";
 import { setCategory } from "@/redux/features/productSlice";
@@ -35,6 +35,7 @@ const items: MenuProps["items"] = [
 ];
 
 export default function Header() {
+  const patchname = usePathname();
   const dispatch = useDispatch();
   const router = useRouter();
   const [openDrawer, setOpenDrawer] = useState(false);
@@ -51,7 +52,6 @@ export default function Header() {
     { key: "news", label: "Tin tức", slug: "tin-tuc" },
     { key: "contact", label: "Liên hệ", slug: "lien-he" }
   );
-
 
   const slugMap = useMemo(() => buildSlugMap(treeData), [treeData]);
 
@@ -167,12 +167,15 @@ export default function Header() {
           </div>
         </div>
       </div>
-
-      {(width ?? 0) <= 768 && (
-        <div className="p-4">
-          <SearchProduct />
-        </div>
-      )}
+      {console.log(patchname)}
+      {(width ?? 0) <= 768 &&
+        patchname !== "/login" &&
+        patchname !== "/lien-he" &&
+        patchname !== "/register" && (
+          <div className="p-4">
+            <SearchProduct />
+          </div>
+        )}
 
       {/* Màn lớn thì để danh mục ở dưới này */}
       {(width ?? 0) > 768 && (

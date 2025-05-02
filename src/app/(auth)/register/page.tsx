@@ -25,7 +25,7 @@ const onFinishFailed: FormProps<FieldType>["onFinishFailed"] = (errorInfo) => {
 export default function Register() {
   return (
     <>
-      <div className="w-[400px] bg-[#f3f3f3] mx-auto my-5 rounded-xl container-form-login flex flex-col items-center pb-3 px-5">
+      <div className="w-[360px] md:w-[400px] bg-[#ffffff] mx-auto my-5 rounded-xl container-form-login flex flex-col items-center pb-3 px-5">
         <div className="flex flex-col items-center gap-5 ">
           <h1 className="text-4xl !font-extralight py-3">Đăng ký</h1>
           <Form
@@ -52,7 +52,9 @@ export default function Register() {
 
             <Form.Item<FieldType>
               name="phone"
-              rules={[{ required: true, message: "Hãy nhập số điện thoại của bạn!" }]}
+              rules={[
+                { required: true, message: "Hãy nhập số điện thoại của bạn!" },
+              ]}
               className="!w-full"
             >
               <Input placeholder="Số điện thoại" />

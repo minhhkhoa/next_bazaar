@@ -33,7 +33,7 @@ const Comment: React.FC = () => (
       <Form.Item<FieldType>
         style={{ width: "37%" }}
         name="username"
-        rules={[{ required: true, message: "Please input your username!" }]}
+        rules={[{ required: true, message: "Hãy điền họ và tên!" }]}
       >
         <Input placeholder="Họ và tên" />
       </Form.Item>
@@ -41,7 +41,7 @@ const Comment: React.FC = () => (
       <Form.Item<FieldType>
         style={{ width: "40%" }}
         name="email"
-        rules={[{ required: true, message: "Please input your email!" }]}
+        rules={[{ required: true, message: "Hãy điền email!" }]}
       >
         <Input placeholder="Email" />
       </Form.Item>
@@ -49,7 +49,7 @@ const Comment: React.FC = () => (
 
     <Form.Item<FieldType>
       name="content"
-      rules={[{ required: true, message: "Please input your content!" }]}
+      rules={[{ required: true, message: "Hãy điền nội dung!" }]}
     >
       <TextArea placeholder="Nội dung" />
     </Form.Item>

@@ -28,7 +28,7 @@ const onFinishFailed: FormProps<FieldType>["onFinishFailed"] = (errorInfo) => {
 export default function PageContact() {
   return (
     <>
-      <div className="flex flex-col lg:flex-row gap-5 px-5 lg:px-30 p-4">
+      <div className="flex flex-col lg:flex-row gap-5 px-5 lg:px-30 p-4 bg-[#ffffff]">
         {/* khối trái */}
         <div className="flex-1">
           {/* khối thông tin */}

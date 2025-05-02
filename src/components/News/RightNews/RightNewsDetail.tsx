@@ -60,7 +60,7 @@ export default function RightNewsDetail({
             </div>
           ))}
         </div>
-        <div className="w-full">
+        <div className="w-full rounded-2xl bg-[#ffffff] p-5">
           <Divider className="!w-[40%]" />
           <h1 className="text-2xl font-extralight my-5">
             Viết bình luận của bạn

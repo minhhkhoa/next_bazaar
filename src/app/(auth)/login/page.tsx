@@ -23,7 +23,7 @@ const onFinishFailed: FormProps<FieldType>["onFinishFailed"] = (errorInfo) => {
 export default function Login() {
   return (
     <>
-      <div className="w-[400px] bg-[#f3f3f3] mx-auto my-5 rounded-xl container-form-login flex flex-col items-center pb-3 px-5">
+      <div className="w-[360px] md:w-[400px] bg-[#ffffff] mx-auto my-5 rounded-xl container-form-login flex flex-col items-center pb-3 px-5">
         <div className="flex flex-col items-center gap-5 ">
           <h1 className="text-4xl !font-extralight py-3">Đăng nhập</h1>
           <Form
@@ -53,7 +53,9 @@ export default function Login() {
 
             <Form.Item<FieldType> name="remember" valuePropName="checked">
               <Checkbox>Ghi nhớ tài khoản!</Checkbox>
-              <span className="text-[#1c5b41] ml-14 hover:italic hover:text-[#fe9614]">Quên mật khẩu</span>
+              <span className="text-[#1c5b41] ml-14 hover:italic hover:text-[#fe9614]">
+                Quên mật khẩu
+              </span>
             </Form.Item>
 
             <Form.Item className="flex justify-center">
