@@ -11,6 +11,7 @@ import { Dropdown, MenuProps } from "antd";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import Notifycation from "../Notify/Notifycation";
 
 type Item = { title: string; item: string[] };
 
@@ -127,7 +128,7 @@ export default function BottomFooter() {
             const menuItems: MenuProps["items"] = item.item.map(
               (text, idx) => ({
                 key: `${index}-${idx}`,
-                label: text,
+                label: <Notifycation label={text} />,
               })
             );
 
@@ -140,12 +141,12 @@ export default function BottomFooter() {
               >
                 <div className="flex justify-between">
                   <a
-                    onClick={(e) => e.preventDefault()}
-                    className="text-white text-lg font-semibold flex items-center gap-2"
+                    onClick={() => console.log("first")}
+                    className="text-white text-lg font-semibold flex items-center gap-2 jj"
                   >
                     {item.title}
                   </a>
-                  <DownOutlined/>
+                  <DownOutlined />
                 </div>
               </Dropdown>
             );

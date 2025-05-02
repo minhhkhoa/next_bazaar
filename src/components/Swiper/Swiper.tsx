@@ -13,7 +13,6 @@ import Link from "next/link";
 export default function SwiperCustomize({ data }: { data: ProductsType[] }) {
   const path = usePathname();
   const trimmedPath = path.replace(/\/[^\/]*$/, "");
-  console.log("trimmedPath: ", trimmedPath);
 
   return (
     <Swiper

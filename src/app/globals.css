@@ -18,3 +18,16 @@ body {
 .swiper-button-next {
   display: none !important;
 }
+
+.mySwiperContact .swiper-slide {
+  width: 200px !important;
+  border-radius: 16px;
+}
+
+@media screen and (max-width: 768px) {
+  .mySwiperContact .swiper-slide {
+    width: 150px !important;
+    
+  }
+  
+}
