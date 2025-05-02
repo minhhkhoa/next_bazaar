@@ -1,3 +1,11 @@
+'use client';
+
+import PageHome from "@/page/Home";
+
 export default function Home() {
-  return <h1>home</h1>;
+  return (
+    <>
+      <PageHome />
+    </>
+  );
 }

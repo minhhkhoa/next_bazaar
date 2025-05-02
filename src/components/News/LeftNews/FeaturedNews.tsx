@@ -17,7 +17,7 @@ export default function FeaturedNews() {
 
   return (
     <>
-      <Col className={`bg-[#F3F3F3] rounded-xl pb-5`}>
+      <Col className={`bg-[#ffffff] rounded-xl pb-5`}>
         <h1 className="text-2xl font-bold text-center p-2">Tin tức nổi bật</h1>
         {News.filter((item: NewsType) => item.featured).map(
           (item: NewsType, index: number) => (
@@ -30,7 +30,7 @@ export default function FeaturedNews() {
               }}
             >
               <div
-                className={`flex items-center gap-5 bg-[#F3F3F3] cursor-pointer px-5 ${
+                className={`flex items-center gap-5 bg-[#ffffff] cursor-pointer px-5 ${
                   (width ?? 0) <= 1024 && "flex-col"
                 }`}
               >

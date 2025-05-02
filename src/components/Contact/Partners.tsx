@@ -55,10 +55,10 @@ const data = [
 
 export default function Partners() {
   return (
-    <div className="bg-[#3C3C3C] overflow-hidden h-[210px] md:h-[260px]">
+    <div className="bg-transparent overflow-hidden h-[210px] md:h-[260px]">
       <div className="translate-y-[10px]">
         <span className="text-2xl font-bold text-[#fe9614] tracking-wide uppercase ml-4">
-          <i>Partners</i>
+          {/* <i>Partners</i> */}
         </span>
       </div>
       <div

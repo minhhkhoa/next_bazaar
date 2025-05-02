@@ -6,7 +6,7 @@ import React from 'react'
 export default function NewsCategories() {
   return (
     <>
-      <Col className={`bg-[#F3F3F3] rounded-xl p-2 w-full `}>
+      <Col className={`bg-[#ffffff] rounded-xl p-2 w-full `}>
         <h1 className="text-[clamp(12px,5vw,24px)] font-bold text-center">
           Danh mục tin tức
         </h1>
