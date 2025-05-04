@@ -11,7 +11,6 @@ export default function BackTopButton() {
       style={{
         right: 24,
         bottom: 24,
-        backgroundColor: "#1890ff",
         color: "white",
         boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)",
       }}
