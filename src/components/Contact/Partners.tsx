@@ -1,8 +1,11 @@
+"use client";
+
 import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
+// @ts-expect-error: Importing Splide components from @splidejs/react-splide causes type errors due to missing type definitions.
+import { Splide, SplideSlide, SplideProps } from "@splidejs/react-splide";
+import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
+import "@splidejs/react-splide/css";
+
 import Image from "next/image";
 import chanel from "@public/contact/chanel.png";
 import dior from "@public/contact/dior.png";
@@ -54,36 +57,45 @@ const data = [
 ];
 
 export default function Partners() {
-  return (
-    <div className="bg-transparent overflow-hidden h-[210px] md:h-[260px]">
-      <div className="">
-      </div>
-      <div
-        style={{
-          color: "#ffffff",
-        }}
-        className="flex items-center justify-center mt-5"
-      >
-        <Swiper
-          modules={[Navigation]}
-          navigation
-          spaceBetween={20}
-          breakpoints={{
-            320: { slidesPerView: 2 },
-            768: { slidesPerView: 2 },
-            1024: { slidesPerView: 4 },
+  // Cấu hình Splide với AutoScroll
+  const options: SplideProps["options"] = {
+    type: "loop",
+    perPage: 3,
+    gap: "1rem",
+    drag: "free",
+    focus: "center",
+    autoScroll: {
+      speed: 0.7,
+      pauseOnHover: false,
+      pauseOnFocus: false,
+      rewind: true,
+    },
+  };
+
+    return (
+      <div className="bg-transparent overflow-hidden h-[210px] md:h-[260px]">
+        <div className=""></div>
+        <div
+          style={{
+            color: "#ffffff",
           }}
-          className="mySwiperContact w-[85%] mx-auto"
+          className="flex items-center justify-center mt-5"
         >
-          {data.map((item) => (
-            <SwiperSlide key={item.id}>
-              <Image
-                src={item.thumbnail}
-                alt="Athena"
-                width={0}
-                height={0}
-                sizes="100vw"
-                className={`
+          <Splide
+            options={options}
+            extensions={{ AutoScroll }}
+            aria-label="AutoScroll Carousel"
+            className="mx-auto w-[80%]"
+          >
+            {data.map((item) => (
+              <SplideSlide key={item.id}>
+                <Image
+                  src={item.thumbnail}
+                  alt="Athena"
+                  width={0}
+                  height={0}
+                  sizes="100vw"
+                  className={`
                 object-fill
                 w-[120px] h-[120px]
                 sm:w-[80px] sm:h-[80px]
@@ -92,12 +104,12 @@ export default function Partners() {
                 xl:w-[180px] xl:h-[180px]
                 rounded-[16px]
               `}
-                priority
-              />
-            </SwiperSlide>
-          ))}
-        </Swiper>
+                  priority
+                />
+              </SplideSlide>
+            ))}
+          </Splide>
+        </div>
       </div>
-    </div>
-  );
+    );
 }

@@ -37,7 +37,7 @@ body {
   background-size: 55px 55px;
 }
 
-.swiper-slide {
+/* .swiper-slide {
   margin-right: 5px !important;
 }
 
@@ -52,7 +52,26 @@ body {
 .mySwiperContact .swiper-slide {
   width: 200px !important;
   border-radius: 16px;
+} */
+
+/* start partner */
+.splide__slide {
+  width: 200px !important;
+  border-radius: 16px;
 }
+
+.splide__pagination {
+  transform: translateY(50px) !important;
+}
+
+  .splide__arrow--prev {
+    left: -5rem !important;
+  }
+
+  .splide__arrow--next {
+    right: -5rem !important;
+  }
+/* end partner */
 
 .slick-next {
   color: rgb(255, 0, 0) !important;
@@ -71,7 +90,15 @@ body {
 }
 
 @media screen and (max-width: 768px) {
-  .mySwiperContact .swiper-slide {
+  .splide__slide {
     width: 150px !important;
+  }
+
+  .splide__arrow--prev {
+    left: -2rem !important;
+  }
+
+  .splide__arrow--next {
+    right: -2rem !important;
   }
 }
