@@ -4,11 +4,14 @@ import Image from "next/image";
 import React, { useCallback, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { ProductsType } from "@/dataType/product";
-import { getProductsByCategoryId } from "@/api/Products/getProductByCategoryId";
-import { Col, Row } from "antd";
+import { filterProductByCategoryId } from "@/api/Products/getProductByCategoryId";
+import { Col, RadioChangeEvent, Row } from "antd";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { newPrice } from "@/ultils/newPrice";
+import useWindowSize from "@/hook/WindowSize/useWindowSize";
+import DrawerCustom from "../Drawer/DrawerCustom";
+import Filter from "./Filter";
 
 export default function ListProducts({
   banner,
@@ -17,23 +20,42 @@ export default function ListProducts({
   banner: string;
   categoryId: string;
 }) {
+  const { width } = useWindowSize();
   const path = usePathname();
   const [data, setData] = useState<ProductsType[] | undefined>([]);
+  const [filter, setFilter] = useState<{ sort: string; price: Array<number> }>({
+    sort: "all",
+    price: [0, 1000],
+  });
+
+  const handleSortChange = (e: RadioChangeEvent) => {
+    setFilter({ ...filter, sort: e.target.value });
+  };
+
+  const handlePriceChange = (value: number[]) => {
+    setFilter({ ...filter, price: value });
+    console.log("price: ", value);
+  };
 
   const fetchData = useCallback(async () => {
     try {
-      const dataProducts = await getProductsByCategoryId(categoryId ?? "");
+      const dataProducts = await filterProductByCategoryId(
+        categoryId ?? "",
+        filter
+      );
       setData(dataProducts);
     } catch (error) {
       console.warn("Error:", error);
     }
-  }, [categoryId]);
+  }, [categoryId, filter]);
 
   useEffect(() => {
     fetchData();
   }, [fetchData]);
 
+  console.log("data: ", data);
 
+  console.log("fliter: ", filter);
   return (
     <>
       {/* Banner */}
@@ -59,42 +81,63 @@ export default function ListProducts({
         <h1 className="text-3xl font-bold my-5 text-[#808080]">
           Các sản phẩm!
         </h1>
-        <Row gutter={[24, 24]} className="w-full">
-          {data?.map((item: ProductsType, index: number) => (
-            <Col
-              key={index}
-              xs={12}
-              sm={12}
-              md={8}
-              lg={6}
-              className="flex justify-center"
-            >
-              <Link href={`${path}/${item.slug}`}>
-                <motion.div
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: index * 0.05 }}
-                  className="bg-white rounded-xl overflow-hidden shadow hover:shadow-lg transition-all duration-300 cursor-pointer w-full max-w-[320px] flex flex-col items-center gap-3 p-4 hover:scale-[1.03]"
-                >
-                  <Image
-                    src={item?.thumbnail}
-                    alt={item.title}
-                    width={0}
-                    height={0}
-                    sizes="100vw"
-                    className="w-full h-[150px] md:h-[220px] object-contain"
-                  />
-                  <div className="text-lg font-semibold text-center line-clamp-2">
-                    {item.title}
-                  </div>
-                  <div className="text-orange-600 text-base font-bold">
-                    {newPrice(item.price, item.discountPercentage)}$
-                  </div>
-                </motion.div>
-              </Link>
-            </Col>
-          ))}
-        </Row>
+        <div className="flex sm:flex-row flex-col gap-5 w-full text-center">
+          {(width ?? 0) >= 768 ? (
+            <Filter
+              handleSortChange={handleSortChange}
+              filter={filter}
+              handlePriceChange={handlePriceChange}
+            />
+          ) : (
+            <DrawerCustom
+              handleSortChange={handleSortChange}
+              filter={filter}
+              handlePriceChange={handlePriceChange}
+            />
+          )}
+          <Row gutter={[24, 24]} className="flex-5">
+            {data?.map((item: ProductsType, index: number) => (
+              <Col
+                key={index}
+                xs={12}
+                sm={12}
+                md={8}
+                lg={6}
+                className="flex justify-center"
+              >
+                <Link href={`${path}/${item.slug}`}>
+                  <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.4, delay: index * 0.05 }}
+                    className="bg-white rounded-xl overflow-hidden shadow hover:shadow-lg transition-all duration-300 cursor-pointer w-full max-w-[320px] flex flex-col items-center gap-3 p-4 hover:scale-[1.03]"
+                  >
+                    <Image
+                      src={item?.thumbnail}
+                      alt={item.title}
+                      width={0}
+                      height={0}
+                      sizes="100vw"
+                      className="w-full h-[150px] md:h-[220px] object-contain"
+                    />
+                    <div className="text-lg font-semibold text-center line-clamp-2">
+                      {item.title}
+                    </div>
+                    <div className="text-orange-600 text-base font-bold">
+                      {newPrice(item.price, item.discountPercentage)}$
+                    </div>
+                  </motion.div>
+                </Link>
+              </Col>
+            ))}
+
+            {!data && (
+              <Col xs={24} md={12} className="flex justify-center">
+                <h1 className="text-2xl font-bold">Không tìm thấy sản phẩm nào phù hợp!</h1>
+              </Col>
+            )}
+          </Row>
+        </div>
       </div>
     </>
   );
