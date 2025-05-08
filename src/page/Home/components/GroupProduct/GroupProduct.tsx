@@ -15,16 +15,16 @@ const GroupProduct = ({
   image: string;
 }) => {
   return (
-    <div className="flex gap-5">
+    <div className="flex gap-10 mx-30 ">
       {/* block left */}
-      <div>
+      <div className='flex-4'>
         <span>{label}</span>
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="flex items-center justify-center"
+          className="flex items-center justify-center w-full h-full"
         >
           <Image
             src={image}
@@ -33,12 +33,13 @@ const GroupProduct = ({
             height="0"
             sizes="100vw"
             className=" w-[350px] h-[450px] object-cover rounded-[8px]"
+            priority
           />
         </motion.div>
       </div>
 
       {/* block right */}
-      <div>
+      <div className='flex-8'>
         <TabProduct dataCategories={dataCategories} />
       </div>
     </div>

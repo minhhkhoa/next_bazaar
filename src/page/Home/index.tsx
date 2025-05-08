@@ -43,7 +43,6 @@ export default function PageHome() {
     productNew: [],
   });
 
-  console.log("dataCategories", dataCategories);
 
   const getDataCategories = async () => {
     try {
@@ -51,13 +50,12 @@ export default function PageHome() {
         "iphone",
         "thoi-trang-nu",
         "serum",
-        "samsung",
         "perfume",
         "laptop",
       ]);
       const categoryNew = await getCategoriesBySlug([
         "laptop",
-        "samsung",
+        "quan-ao-nam",
         "perfume",
       ]);
 
@@ -67,8 +65,8 @@ export default function PageHome() {
 
       setDataCategories((prev) => ({
         ...prev,
-        productNew: categoryFeature,
-        productFeatures: categoryNew,
+        productNew: categoryNew,
+        productFeatures: categoryFeature,
       }));
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -98,16 +96,20 @@ export default function PageHome() {
           <Ballpit />
         </div>
       )}
-      <GroupProduct
-        label="Sản phẩm nổi bật"
-        image={featureProduct.src}
-        dataCategories={dataCategories.productFeatures}
-      />
-      <GroupProduct
-        label="Sản phẩm mới"
-        image={newProduct.src}
-        dataCategories={dataCategories.productNew}
-      />
+      <div className="mt-10">
+        <GroupProduct
+          label="Sản phẩm nổi bật"
+          image={featureProduct.src}
+          dataCategories={dataCategories.productFeatures}
+        />
+      </div>
+      <div className="mt-20 mb-10">
+        <GroupProduct
+          label="Sản phẩm mới"
+          image={newProduct.src}
+          dataCategories={dataCategories.productNew}
+        />
+      </div>
     </div>
   );
 }

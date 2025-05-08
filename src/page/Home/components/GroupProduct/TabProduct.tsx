@@ -1,10 +1,15 @@
 import React, { useEffect, useState } from "react";
-import { Tabs } from "antd";
+import { Col, Row, Tabs } from "antd";
 import type { TabsProps } from "antd";
 import { Category } from "@/dataType/product-category";
 import { ProductsType } from "@/dataType/product";
 import { getProductsByCategoryId } from "@/api/Products/getProductByCategoryId";
 import type { TabsType } from "antd/lib/tabs";
+import Link from "next/link";
+import { motion } from "framer-motion";
+import { newPrice } from "@/ultils/newPrice";
+import Image from "next/image";
+import { getSlugPath } from "@/ultils/getSlugParent";
 
 interface TabProductProps {
   dataCategories?: Category[];
@@ -30,18 +35,71 @@ const TabProduct: React.FC<TabProductProps> = ({ dataCategories }) => {
             const products: ProductsType[] | undefined =
               await getProductsByCategoryId(cat._id.$oid);
             if (products) {
+              //- lấy đường dẫn của category trên trang chủ
+              const categoryPath = getSlugPath(cat._id.$oid);
               return {
                 key: cat._id.$oid,
                 label: cat.title,
                 children: (
-                  <div>
-                    {products.map((p) => (
-                      <div key={p._id.$oid /* hoặc _id */}>
-                        <h4>{p.title}</h4>
-                        <p>{p.price}</p>
-                      </div>
-                    ))}
-                  </div>
+                  <Row gutter={[24, 24]} className="flex-5">
+                    {products
+                      .slice(0, 6)
+                      ?.map((item: ProductsType, index: number) => {
+                        return (
+                          <Col
+                            key={index}
+                            xs={12}
+                            sm={12}
+                            md={8}
+                            lg={6}
+                            className="flex justify-center"
+                          >
+                            <Link href={`${categoryPath}/${item.slug}`}>
+                              <motion.div
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{
+                                  duration: 0.4,
+                                  delay: index * 0.05,
+                                }}
+                                className="
+                            bg-white rounded-xl overflow-hidden shadow hover:shadow-lg
+                              transition-all duration-300 cursor-pointer
+                              max-w-[320px]
+                              h-[200px]              
+                              flex flex-col   
+                              w-[100px]
+                              sm:w-[160px]
+                              md:w-[180px]
+                            "
+                              >
+                                <div className="flex-1 w-full flex items-center justify-center">
+                                  <Image
+                                    src={item.thumbnail}
+                                    alt={item.title}
+                                    width={0}
+                                    height={0}
+                                    sizes="100vw"
+                                    className="max-h-[100px] w-auto object-contain"
+                                    priority
+                                  />
+                                </div>
+                                <div className="px-4 text-sm font-semibold text-center line-clamp-2">
+                                  {item.title}
+                                </div>
+                                <div className="px-4 pb-3 text-orange-600 text-base font-bold text-center">
+                                  {newPrice(
+                                    item.price,
+                                    item.discountPercentage
+                                  )}
+                                  $
+                                </div>
+                              </motion.div>
+                            </Link>
+                          </Col>
+                        );
+                      })}
+                  </Row>
                 ),
               } as TabsProps["items"] extends TabsType[]
                 ? TabsProps["items"][number]
@@ -68,13 +126,7 @@ const TabProduct: React.FC<TabProductProps> = ({ dataCategories }) => {
     fetchAll();
   }, [dataCategories]);
 
-  console.log("tabsItems", tabsItems);
-
-  return (
-    <Tabs
-      items={tabsItems}
-    />
-  );
+  return <Tabs items={tabsItems} />;
 };
 
 export default TabProduct;

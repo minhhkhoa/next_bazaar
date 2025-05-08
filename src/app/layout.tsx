@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import "./globals.css";
 import ScrollToTop from "@/hook/Scroll/ScrollToTop";
 import BackTopButton from "@/components/BackTop/BackTopButton";
 import { Providers } from "./providers";
+import Container from "./Container";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,11 +36,7 @@ export default function RootLayout({
 
         {/* bọc children với Providers */}
         <Providers>
-          <header>
-            <Header />
-          </header>
-
-          {children}
+          <Container>{children}</Container>
         </Providers>
 
         <BackTopButton />
