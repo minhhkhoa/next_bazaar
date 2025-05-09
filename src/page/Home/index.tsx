@@ -50,7 +50,6 @@ export default function PageHome() {
         "iphone",
         "thoi-trang-nu",
         "serum",
-        "perfume",
         "laptop",
       ]);
       const categoryNew = await getCategoriesBySlug([
@@ -98,14 +97,14 @@ export default function PageHome() {
       )}
       <div className="mt-10">
         <GroupProduct
-          label="Sản phẩm nổi bật"
+          label="SẢN PHẨM NỔI BẬT"
           image={featureProduct.src}
           dataCategories={dataCategories.productFeatures}
         />
       </div>
       <div className="mt-20 mb-10">
         <GroupProduct
-          label="Sản phẩm mới"
+          label="SẢN PHẨM MỚI"
           image={newProduct.src}
           dataCategories={dataCategories.productNew}
         />

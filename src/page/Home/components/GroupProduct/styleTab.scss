@@ -1,0 +1,50 @@
+.ant-tabs-nav-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ant-tabs-nav-list {
+  gap: 40px;
+}
+
+.ant-tabs-tab {
+  transition: all 0.3s ease;
+  width: auto !important;
+  &-btn {
+    font-weight: 500;
+    font-size: 16px;
+    color: #020202;
+  }
+
+  &-active {
+    border-bottom: none !important;
+    color: white !important;
+    background-color: #fe9614 !important;
+    padding: 0 10px !important;
+    border-radius: 16px;
+
+    .ant-tabs-tab-btn {
+      font-weight: 500;
+      font-size: 16px;
+      color: #ffffff !important;
+    }
+  }
+}
+
+//- xóa gạch chân của tab
+.ant-tabs-ink-bar {
+  display: none !important; 
+}
+
+@media screen and (max-width: 768px) {
+  .ant-tabs-nav-list {
+    gap: 0px;
+    padding: 0 10px !important;
+  } 
+
+  .ant-tabs .ant-tabs-tab + .ant-tabs-tab {
+      margin: 0 0 0 20px;
+}
+
+}

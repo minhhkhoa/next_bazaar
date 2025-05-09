@@ -10,6 +10,8 @@ import { motion } from "framer-motion";
 import { newPrice } from "@/ultils/newPrice";
 import Image from "next/image";
 import { getSlugPath } from "@/ultils/getSlugParent";
+import "./styleTab.scss";
+
 
 interface TabProductProps {
   dataCategories?: Category[];
@@ -48,8 +50,8 @@ const TabProduct: React.FC<TabProductProps> = ({ dataCategories }) => {
                         return (
                           <Col
                             key={index}
-                            xs={12}
-                            sm={12}
+                            xs={8}
+                            sm={8}
                             md={8}
                             lg={6}
                             className="flex justify-center"
