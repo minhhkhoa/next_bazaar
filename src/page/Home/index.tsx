@@ -147,7 +147,7 @@ export default function PageHome() {
           </Magnet>
         </div>
       ) : (
-        <div className="h-[300px] mx-auto mb-10">
+        <div className="h-[300px] mx-auto mb-10 mt-10">
           <Ballpit />
         </div>
       )}
