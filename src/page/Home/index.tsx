@@ -139,7 +139,7 @@ export default function PageHome() {
       </div>
 
       {(width ?? 0) <= 768 ? (
-        <div className="mx-auto bg-black text-amber-50 h-[150px] flex items-center justify-center mb-10">
+        <div className="mx-auto bg-black text-amber-50 h-[150px] flex items-center justify-center mb-10 mt-10">
           <Magnet padding={150} disabled={false} magnetStrength={1}>
             <p className="rounded-lg border-2 border-amber-50 p-2">
               <JavaScriptOutlined />
@@ -147,7 +147,7 @@ export default function PageHome() {
           </Magnet>
         </div>
       ) : (
-        <div className="h-[300px] mx-auto mb-10 mt-10">
+        <div className="h-[300px] mx-auto mb-10">
           <Ballpit />
         </div>
       )}
