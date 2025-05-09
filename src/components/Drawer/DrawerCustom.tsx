@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import type { DrawerProps, RadioChangeEvent } from "antd";
 import { Button, Drawer, Radio, Slider, Space } from "antd";
-import { FilterOutlined } from "@ant-design/icons";
+import { CloseOutlined, FilterOutlined } from "@ant-design/icons";
 
 interface DrawerCustomProps {
   handleSortChange: (e: RadioChangeEvent) => void;
@@ -30,7 +30,11 @@ any) => {
   return (
     <>
       <Space>
-        <Button type="primary" className="!bg-[#fe9614] !text-white" onClick={showDrawer}>
+        <Button
+          type="primary"
+          className="!bg-[#fe9614] !text-white"
+          onClick={showDrawer}
+        >
           <FilterOutlined />
           Bộ lọc
         </Button>
@@ -73,6 +77,14 @@ any) => {
               />
             </div>
           </div>
+
+          <div onClick={onClose} className="absolute top-3 right-3">
+            <CloseOutlined />
+          </div>
+
+          <Button onClick={onClose} className="!absolute !top-80 !right-3" type="primary">
+            Lọc
+          </Button>
         </div>
       </Drawer>
     </>

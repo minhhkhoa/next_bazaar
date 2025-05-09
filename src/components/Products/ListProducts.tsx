@@ -71,7 +71,7 @@ export default function ListProducts({
           width={0}
           height={0}
           sizes="100vw"
-          className="w-full h-[160px] md:h-[300px] lg:h-[400px] object-cover"
+          className="w-full h-[160px] md:h-[300px] lg:h-[400px] object-cover rounded-2xl"
           priority
         />
       </motion.div>

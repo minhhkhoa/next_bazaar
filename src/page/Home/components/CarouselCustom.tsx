@@ -9,7 +9,7 @@ const CarouselCustom: React.FC<SwiperCustomizeProps> = ({
   data,
 }: SwiperCustomizeProps) => (
   <>
-    <Carousel arrows infinite={false}>
+    <Carousel arrows infinite={true} autoplay>
       {data?.map((item: SwiperProps) => (
         <div key={item.id}>
           <Image

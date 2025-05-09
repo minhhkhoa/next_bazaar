@@ -6,6 +6,7 @@ import banner_serum from "@public/banner/banner_serum.avif";
 import banner_fashion_woman from "@public/banner/banner_thoitrangnu.jpg";
 import featureProduct from "@public/groupProduct/featureProduct.webp";
 import newProduct from "@public/groupProduct/newProduct.webp";
+import slaeProducts from "@public/groupProduct/banner_sale.webp";
 import Ballpit from "./components/Ballpit/Ballpit";
 import Magnet from "./components/Magnet/Magnet";
 import { JavaScriptOutlined } from "@ant-design/icons";
@@ -13,6 +14,8 @@ import useWindowSize from "@/hook/WindowSize/useWindowSize";
 import GroupProduct from "./components/GroupProduct/GroupProduct";
 import { getCategoriesBySlug } from "@/api/Products/getCategories";
 import { Category } from "@/dataType/product-category";
+import SaleProduct from "./components/GroupProduct/SaleProduct";
+import { Divider } from "antd";
 
 const dataCarousel = [
   {
@@ -42,7 +45,6 @@ export default function PageHome() {
     productFeatures: [],
     productNew: [],
   });
-
 
   const getDataCategories = async () => {
     try {
@@ -81,9 +83,63 @@ export default function PageHome() {
       <div className="w-[95%] mx-auto">
         <CarouselCustom data={dataCarousel ?? []} />
       </div>
-      PageHome
+
+      <div className="w-[30%] mx-auto pt-5">
+        <Divider
+          style={{
+            borderColor: "#fe9614",
+            margin: "16px auto",
+            borderTopWidth: 3,
+          }}
+        />
+      </div>
+
+      <div className="mt-10 mb-10">
+        <GroupProduct
+          label="SẢN PHẨM NỔI BẬT"
+          image={featureProduct.src}
+          dataCategories={dataCategories.productFeatures}
+        />
+      </div>
+
+      <div className="w-[30%] mx-auto pt-5">
+        <Divider
+          style={{
+            borderColor: "#fe9614",
+            margin: "16px auto",
+            borderTopWidth: 3,
+          }}
+        />
+      </div>
+
+      <div className="mt-10 w-[100%]">
+        <SaleProduct
+          label="SALE ĐỒNG GIÁ - ĐỪNG LO VỀ GIÁ"
+          banner={slaeProducts.src}
+          dataSaleProducts={[]}
+        />
+      </div>
+
+      <div className="w-[30%] mx-auto pt-5">
+        <Divider
+          style={{
+            borderColor: "#fe9614",
+            margin: "16px auto",
+            borderTopWidth: 3,
+          }}
+        />
+      </div>
+
+      <div className="mt-10">
+        <GroupProduct
+          label="SẢN PHẨM MỚI"
+          image={newProduct.src}
+          dataCategories={dataCategories.productNew}
+        />
+      </div>
+
       {(width ?? 0) <= 768 ? (
-        <div className="mx-auto bg-black text-amber-50 h-[150px] flex items-center justify-center">
+        <div className="mx-auto bg-black text-amber-50 h-[150px] flex items-center justify-center mb-10">
           <Magnet padding={150} disabled={false} magnetStrength={1}>
             <p className="rounded-lg border-2 border-amber-50 p-2">
               <JavaScriptOutlined />
@@ -91,24 +147,10 @@ export default function PageHome() {
           </Magnet>
         </div>
       ) : (
-        <div className="h-[300px] mx-auto">
+        <div className="h-[300px] mx-auto mb-10">
           <Ballpit />
         </div>
       )}
-      <div className="mt-10">
-        <GroupProduct
-          label="SẢN PHẨM NỔI BẬT"
-          image={featureProduct.src}
-          dataCategories={dataCategories.productFeatures}
-        />
-      </div>
-      <div className="mt-20 mb-10">
-        <GroupProduct
-          label="SẢN PHẨM MỚI"
-          image={newProduct.src}
-          dataCategories={dataCategories.productNew}
-        />
-      </div>
     </div>
   );
 }
