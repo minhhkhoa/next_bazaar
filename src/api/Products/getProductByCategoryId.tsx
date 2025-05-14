@@ -17,6 +17,30 @@ export async function getProductsByCategoryId(
 
   return dataProducts;
 }
+export async function getProductsByTitle(
+  title: string
+): Promise<ProductsType[] | undefined> {
+  if (!title) return undefined;
+  //- nếu tìm thây tìm chi tiet thì trả về
+  const exactMatch = products.find(
+    (item: ProductsType) => item.title.toLowerCase() === title.toLowerCase()
+  );
+  if (exactMatch) {
+    return [exactMatch];
+  }
+
+  //- chạy tới đây thì không thấy sản phẩm chi tiết rồi
+  const dataProducts = products.filter((item: ProductsType) =>
+    item.title.toLowerCase().includes(title.toLowerCase())
+  );
+
+  if (!dataProducts) {
+    console.warn("News not found with categoryId:", title);
+    return undefined;
+  }
+
+  return dataProducts;
+}
 
 export async function getProductBySlug(
   slug: string
@@ -56,6 +80,39 @@ export async function filterProductByCategoryId(
   // 2. Nếu không tìm được sản phẩm nào thì trả về undefined
   if (dataProducts.length === 0) {
     console.warn(`No products found for categoryId: ${categoryId}`);
+    return undefined;
+  }
+
+  // 3. Sắp xếp theo giá khi cần
+  if (filter.sort === "price-low-high") {
+    dataProducts.sort((a, b) => a.price - b.price);
+  } else if (filter.sort === "price-high-low") {
+    dataProducts.sort((a, b) => b.price - a.price);
+  }
+
+  return dataProducts;
+}
+
+export async function filterProduct(
+  data: ProductsType[],
+  filter: { sort: string; price: Array<number> }
+): Promise<ProductsType[] | undefined> {
+
+  const dataProducts = data.filter((item) => {
+    const inPriceRange =
+      item.price >= filter.price[0] && item.price <= filter.price[1];
+    if (!inPriceRange) return false;
+
+    if (filter.sort === "feature") {
+      return item.featured === "1";
+    }
+    // Với các loại sort còn lại (all, price-low-high, price-high-low) => giữ lại tất cả
+    return true;
+  });
+
+  // 2. Nếu không tìm được sản phẩm nào thì trả về undefined
+  if (dataProducts.length === 0) {
+    console.warn(`No products found for categoryId}`);
     return undefined;
   }
 

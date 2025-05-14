@@ -4,7 +4,7 @@ import Image from "next/image";
 import React, { useCallback, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { ProductsType } from "@/dataType/product";
-import { filterProductByCategoryId } from "@/api/Products/getProductByCategoryId";
+import { filterProduct, filterProductByCategoryId } from "@/api/Products/getProductByCategoryId";
 import { Col, RadioChangeEvent, Row } from "antd";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -12,6 +12,8 @@ import { newPrice } from "@/ultils/newPrice";
 import useWindowSize from "@/hook/WindowSize/useWindowSize";
 import DrawerCustom from "../Drawer/DrawerCustom";
 import Filter from "./Filter";
+import { useSelector } from "react-redux";
+import { RootState } from "@/redux/store";
 
 export default function ListProducts({
   banner,
@@ -22,6 +24,10 @@ export default function ListProducts({
 }) {
   const { width } = useWindowSize();
   const path = usePathname();
+  const products = useSelector(
+    (state: RootState) => state.products.findProducts
+  );
+
   const [data, setData] = useState<ProductsType[] | undefined>([]);
   const [filter, setFilter] = useState<{ sort: string; price: Array<number> }>({
     sort: "all",
@@ -34,8 +40,8 @@ export default function ListProducts({
 
   const handlePriceChange = (value: number[]) => {
     setFilter({ ...filter, price: value });
-    console.log("price: ", value);
   };
+
 
   const fetchData = useCallback(async () => {
     try {
@@ -43,19 +49,21 @@ export default function ListProducts({
         categoryId ?? "",
         filter
       );
-      setData(dataProducts);
+      if (products.length > 0) {
+        const newData = await filterProduct(products, filter);
+        setData(newData);
+      } else {
+        setData(dataProducts);
+      }
     } catch (error) {
       console.warn("Error:", error);
     }
-  }, [categoryId, filter]);
+  }, [categoryId, filter, products]);
 
   useEffect(() => {
     fetchData();
   }, [fetchData]);
 
-  console.log("data: ", data);
-
-  console.log("fliter: ", filter);
   return (
     <>
       {/* Banner */}
@@ -133,7 +141,9 @@ export default function ListProducts({
 
             {!data && (
               <Col xs={24} md={12} className="flex justify-center">
-                <h1 className="text-2xl font-bold">Không tìm thấy sản phẩm nào phù hợp!</h1>
+                <h1 className="text-2xl font-bold">
+                  Không tìm thấy sản phẩm nào phù hợp!
+                </h1>
               </Col>
             )}
           </Row>

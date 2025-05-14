@@ -11,6 +11,8 @@ export default function SamsungDetail() {
   const categoryId = useSelector(
     (state: RootState) => state.products.selectedCategoryId
   );
+
+  console.log("categoryId", categoryId);
   return (
     <ProductDetail
       slug={params.slug?.toString() ?? ""}

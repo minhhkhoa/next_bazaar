@@ -8,7 +8,7 @@ import removeEmptyChildren from "@/ultils/removeEmptyChildren";
 import { usePathname } from "next/navigation";
 import { buildSlugMap } from "@/ultils/menuUtils";
 import { useDispatch } from "react-redux";
-import { setCategory } from "@/redux/features/productSlice";
+import { setCategory, setFindProducts } from "@/redux/features/productSlice";
 
 export default function HeaderMenu() {
   const dispatch = useDispatch();
@@ -49,6 +49,7 @@ export default function HeaderMenu() {
     } else {
       router.push(`${path}`);
       dispatch(setCategory(key));
+      dispatch(setFindProducts([]));
     }
   };
 

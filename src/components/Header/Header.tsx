@@ -21,7 +21,7 @@ import removeEmptyChildren from "@/ultils/removeEmptyChildren";
 import { usePathname, useRouter } from "next/navigation";
 import { buildSlugMap } from "@/ultils/menuUtils";
 import { useDispatch } from "react-redux";
-import { setCategory } from "@/redux/features/productSlice";
+import { setCategory, setFindProducts } from "@/redux/features/productSlice";
 
 const items: MenuProps["items"] = [
   {
@@ -69,6 +69,7 @@ export default function Header() {
     } else {
       router.push(`${path}`);
       dispatch(setCategory(key));
+      dispatch(setFindProducts([]));
     }
     setOpenDrawer(false);
   };
